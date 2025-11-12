@@ -1,0 +1,11 @@
+/* App specific styles */
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary: #2D7C5C;
+  --secondary: #2B7BA9;
+}
