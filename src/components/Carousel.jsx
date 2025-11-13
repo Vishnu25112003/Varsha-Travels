@@ -87,10 +87,6 @@ export default function Carousel({ slides, autoPlay = true, interval = 5000 }) {
         ))}
       </div>
 
-      {/* Slide Counter */}
-      <div className="absolute top-8 right-8 z-20 bg-black/30 backdrop-blur-md text-white px-4 py-2 rounded-full text-sm font-semibold">
-        {currentSlide + 1} / {slides.length}
-      </div>
     </div>
   )
 }

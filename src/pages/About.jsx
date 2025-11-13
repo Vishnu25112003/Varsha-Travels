@@ -1,13 +1,7 @@
 import React from "react";
-import Carousel from "../components/Carousel";
 import { ServiceCard, ValueCard, StatCard } from "../components/Card";
 
 export default function About() {
-  const companyImages = [
-    "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1200&h=600&fit=crop",
-    "https://images.unsplash.com/photo-1464207687429-7505649dae38?w=1200&h=600&fit=crop",
-    "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1200&h=600&fit=crop",
-  ];
 
   const serviceImages = [
     "https://images.unsplash.com/photo-1464207687429-7505649dae38?w=600&h=400&fit=crop",
@@ -20,9 +14,14 @@ export default function About() {
 
   return (
     <div className="min-h-screen bg-white mt-7 pt-20">
-      {/* Hero Carousel */}
-      <div className="h-[600px] w-full">
-        <Carousel slides={companyImages} autoPlay={true} interval={5000} />
+      {/* Hero Image */}
+      <div className="relative h-[600px] w-full overflow-hidden">
+        <img
+          src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1200&h=600&fit=crop"
+          alt="Varsha Travels"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/15 to-transparent" />
       </div>
 
       {/* Company History */}

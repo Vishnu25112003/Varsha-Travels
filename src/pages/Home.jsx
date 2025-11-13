@@ -28,7 +28,7 @@ export default function Home() {
       subtitle: "Tempo Traveller, AC Bus and luxury options available",
     },
     {
-      src: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1920&h=800&fit=crop",
+      src: "https://www.justahotels.com/wp-content/uploads/2023/09/Tamil-Nadu-1-scaled.jpg",
       title: "Book Your Next Journey Today",
       subtitle: "Transparent pricing • 24/7 support",
     },
@@ -39,9 +39,15 @@ export default function Home() {
       <img src={s.src} alt={s.title} className="w-full h-full object-cover" />
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/25 to-transparent" />
       <div className="absolute bottom-10 sm:bottom-14 left-4 sm:left-10 right-4 sm:right-auto max-w-xl">
-        <span className="inline-block mb-3 rounded-full bg-white/10 border border-white/30 px-3 py-1 text-[10px] sm:text-xs text-white/90">Varsha Travels</span>
-        <h2 className="text-white font-black text-2xl sm:text-4xl md:text-5xl leading-tight drop-shadow">{s.title}</h2>
-        <p className="text-white/90 mt-2 sm:mt-3 text-sm sm:text-base md:text-lg">{s.subtitle}</p>
+        <span className="inline-block mb-3 rounded-full bg-white/10 border border-white/30 px-3 py-1 text-[10px] sm:text-xs text-white/90">
+          Varsha Travels
+        </span>
+        <h2 className="text-white font-black text-2xl sm:text-4xl md:text-5xl leading-tight drop-shadow">
+          {s.title}
+        </h2>
+        <p className="text-white/90 mt-2 sm:mt-3 text-sm sm:text-base md:text-lg">
+          {s.subtitle}
+        </p>
       </div>
     </div>
   ));
