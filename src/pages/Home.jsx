@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Carousel from "../components/Carousel";
-import Spline from "@splinetool/react-spline";
 import { placeImages } from "../data/images";
 import { PlaceCard, FeatureCard } from "../components/Card";
 

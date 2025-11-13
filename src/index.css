@@ -44,3 +44,10 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: #2B7BA9;
 }
+
+/* Utility to allow long words/names to wrap within small boxes/chips */
+.break-anywhere {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  hyphens: auto;
+}

@@ -102,11 +102,11 @@ export default function Destination() {
                 <h3 className="text-xl font-bold text-primary mb-4">
                   Highlights
                 </h3>
-                <div className="grid grid-cols-2 gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {selectedPlace.highlights.map((highlight, idx) => (
                     <div
                       key={idx}
-                      className="bg-primary/10 border border-primary/50 rounded-lg p-3 text-gray-900"
+                      className="bg-primary/10 border border-primary/50 rounded-lg p-3 text-gray-900 break-anywhere"
                     >
                       ✓ {highlight}
                     </div>
