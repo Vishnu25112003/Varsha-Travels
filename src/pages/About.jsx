@@ -2,7 +2,6 @@ import React from "react";
 import { ServiceCard, ValueCard, StatCard } from "../components/Card";
 
 export default function About() {
-
   const serviceImages = [
     "https://images.unsplash.com/photo-1464207687429-7505649dae38?w=600&h=400&fit=crop",
     "https://images.unsplash.com/photo-1552820728-8ac41f1ce891?w=600&h=400&fit=crop",
@@ -18,7 +17,7 @@ export default function About() {
       {/* Reduced height hero banner (a bit taller) */}
       <div className="relative w-full h-80 sm:h-[420px] md:h-[480px] lg:h-[520px] overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1200&h=600&fit=crop"
+          src="https://images4.alphacoders.com/679/thumb-1920-679366.jpg"
           alt="Varsha Travels"
           className="w-full h-full object-cover"
         />

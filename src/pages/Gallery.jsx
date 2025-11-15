@@ -7,8 +7,8 @@ import { CategoryCard, FeatureCard } from "../components/Card";
 export default function Gallery() {
   const carImages = [
     "https://lh4.googleusercontent.com/kMFOQyx8yv-AJUeQZnS30SsaSruZqEE2q_nr0hK_Wd-GCQTpusizZ6Fgrbu2zEfnqRLn2w3jrA-tBfwU0w8L3YYMjK1L5yvOKfmcbgZD7npetWOsFTm3dXgoAE3Yd8vUcJdS86kHune5WzIumHXmR-M",
-    "https://parkers-images.bauersecure.com/wp-images/18309/930x620/052-most-economical-cars-2024-kia-niro.jpg",
-    "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Y2FyfGVufDB8fDB8fHww&fm=jpg&q=60&w=3000",
+    "https://media.assettype.com/dhanamonline-english/2025-10-22/yyb37srm/Tata-Motors.png",
+    "https://images.unsplash.com/photo-1493238792000-8113da705763?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FyJTIwd2FsbHBhcGVyfGVufDB8fDB8fHww",
     "https://images.pexels.com/photos/7674/pexels-photo.jpg?cs=srgb&dl=pexels-life-of-pix-7674.jpg&fm=jpg",
   ];
 
