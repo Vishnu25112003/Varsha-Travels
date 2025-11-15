@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 export default function Footer() {
+  const [showQr, setShowQr] = useState(false)
   return (
     <footer className="bg-gradient-to-b from-gray-900 to-black text-white border-t border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
@@ -12,7 +13,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-3 md:mb-4">
-              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center">
+              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-gradient-to-r from-blue-600 to-indigo-500 flex items-center justify-center">
                 <span className="text-white font-bold">V</span>
               </div>
               <span className="text-white font-bold text-sm sm:text-base">Varsha Travels</span>
@@ -24,31 +25,49 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-bold text-base sm:text-lg mb-3 md:mb-4">Quick Links</h4>
             <ul className="grid grid-cols-2 gap-x-4 gap-y-2 sm:block sm:space-y-2 text-xs sm:text-sm text-gray-300">
-              <li><Link to="/" className="hover:text-primary transition">Home</Link></li>
-              <li><Link to="/about" className="hover:text-primary transition">About</Link></li>
-              <li><Link to="/destination" className="hover:text-primary transition">Destination</Link></li>
-              <li><Link to="/gallery" className="hover:text-primary transition">Gallery</Link></li>
+              <li><Link to="/" className="hover:text-blue-400 transition">Home</Link></li>
+              <li><Link to="/about" className="hover:text-blue-400 transition">About</Link></li>
+              <li><Link to="/destination" className="hover:text-blue-400 transition">Destination</Link></li>
+              <li><Link to="/gallery" className="hover:text-blue-400 transition">Gallery</Link></li>
             </ul>
           </div>
 
-          {/* Services */}
+          {/* Account Details */}
           <div>
-            <h4 className="text-white font-bold text-base sm:text-lg mb-3 md:mb-4">Services</h4>
-            <ul className="grid grid-cols-2 gap-x-4 gap-y-2 sm:block sm:space-y-2 text-xs sm:text-sm text-gray-300">
-              <li><a href="#" className="hover:text-primary transition">Car Rentals</a></li>
-              <li><a href="#" className="hover:text-primary transition">Tour Packages</a></li>
-              <li><a href="#" className="hover:text-primary transition">Group Bookings</a></li>
-              <li><a href="#" className="hover:text-primary transition">Corporate Travel</a></li>
+            <h4 className="text-white font-bold text-base sm:text-lg mb-3 md:mb-4">Account Details</h4>
+            <ul className="space-y-2 text-xs sm:text-sm text-gray-300">
+              <li>Bank: State Bank of India</li>
+              <li>Account No: 30231884313</li>
+              <li>IFSC: SBIN0000253</li>
+              <li>Branch: Tallakulam</li>
+              <li>Account Name: S Muthukumar</li>
             </ul>
+            <button
+              type="button"
+              onClick={() => setShowQr((prev) => !prev)}
+              className="mt-3 inline-flex items-center px-3 py-1.5 rounded-full bg-white/10 hover:bg-white/20 text-xs sm:text-sm text-white transition"
+            >
+              {showQr ? 'Hide QR Code' : 'Show QR Code'}
+            </button>
+            {showQr && (
+              <div className="mt-3">
+                <img
+                  src="/upi-qr.png"
+                  alt="UPI payment QR code"
+                  className="w-32 h-32 object-contain rounded-md border border-white/10 bg-white"
+                />
+                <p className="text-xs text-gray-400 mt-1">UPI ID: varshamd12@okaxis</p>
+              </div>
+            )}
           </div>
 
           {/* Contact */}
           <div>
             <h4 className="text-white font-bold text-base sm:text-lg mb-3 md:mb-4">Contact</h4>
             <ul className="space-y-2 text-xs sm:text-sm text-gray-300">
-              <li>📍 Chennai, TN</li>
-              <li>📞 +91 9876543210</li>
-              <li>✉️ info@varshatravels.com</li>
+              <li>📍 57, 5th Cross Street, East Vaithiyanatha Puram, Thathaneri P.O, Madurai - 625018</li>
+              <li>📞 8778265650 / 9435360401</li>
+              <li>✉️ varshatravels06@gmail.com</li>
               <li>🕐 24/7 Support</li>
             </ul>
           </div>
@@ -74,12 +93,13 @@ export default function Footer() {
 
 function MobileFooter() {
   const [open, setOpen] = useState({ links: false, services: false, contact: false })
+  const [showQr, setShowQr] = useState(false)
   const toggle = (key) => setOpen((prev) => ({ ...prev, [key]: !prev[key] }))
   return (
     <div className="md:hidden mb-8">
       {/* Brand */}
       <div className="flex items-center gap-2 mb-4">
-        <div className="w-9 h-9 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center">
+        <div className="w-9 h-9 rounded-full bg-gradient-to-r from-blue-600 to-indigo-500 flex items-center justify-center">
           <span className="text-white font-bold">V</span>
         </div>
         <div>
@@ -98,29 +118,46 @@ function MobileFooter() {
         </button>
         <div id="footer-links" className={`${open.links ? 'block' : 'hidden'} px-4 pb-3 pt-2`}>
           <ul className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm text-gray-300">
-            <li><Link to="/" className="hover:text-primary transition">Home</Link></li>
-            <li><Link to="/about" className="hover:text-primary transition">About</Link></li>
-            <li><Link to="/destination" className="hover:text-primary transition">Destination</Link></li>
-            <li><Link to="/gallery" className="hover:text-primary transition">Gallery</Link></li>
+            <li><Link to="/" className="hover:text-blue-400 transition">Home</Link></li>
+            <li><Link to="/about" className="hover:text-blue-400 transition">About</Link></li>
+            <li><Link to="/destination" className="hover:text-blue-400 transition">Destination</Link></li>
+            <li><Link to="/gallery" className="hover:text-blue-400 transition">Gallery</Link></li>
           </ul>
         </div>
       </div>
 
-      {/* Accordion: Services */}
+      {/* Accordion: Account Details */}
       <div className="border border-white/10 rounded-xl overflow-hidden mb-3">
         <button onClick={() => toggle('services')} aria-expanded={open.services} aria-controls="footer-services" className="w-full flex items-center justify-between px-4 py-3 bg-white/5">
-          <span className="font-semibold">Services</span>
+          <span className="font-semibold">Account Details</span>
           <svg className={`w-5 h-5 transition-transform ${open.services ? 'rotate-180' : ''}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
           </svg>
         </button>
         <div id="footer-services" className={`${open.services ? 'block' : 'hidden'} px-4 pb-3 pt-2`}>
-          <ul className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm text-gray-300">
-            <li><a href="#" className="hover:text-primary transition">Car Rentals</a></li>
-            <li><a href="#" className="hover:text-primary transition">Tour Packages</a></li>
-            <li><a href="#" className="hover:text-primary transition">Group Bookings</a></li>
-            <li><a href="#" className="hover:text-primary transition">Corporate Travel</a></li>
+          <ul className="space-y-2 text-sm text-gray-300">
+            <li>Bank: State Bank of India</li>
+            <li>Account No: 30231884313</li>
+            <li>IFSC: SBIN0000253</li>
+            <li>Branch: Tallakulam</li>
+            <li>Account Name: S Muthukumar</li>
           </ul>
+          <button
+            type="button"
+            onClick={() => setShowQr((prev) => !prev)}
+            className="mt-3 inline-flex items-center px-3 py-1.5 rounded-full bg-white/10 hover:bg-white/20 text-xs text-white transition"
+          >
+            {showQr ? 'Hide QR Code' : 'Show QR Code'}
+          </button>
+          {showQr && (
+            <div className="mt-3 flex justify-center">
+              <img
+                src="/upi-qr.png"
+                alt="UPI payment QR code"
+                className="w-40 h-40 object-contain rounded-md border border-white/10 bg-white"
+              />
+            </div>
+          )}
         </div>
       </div>
 
@@ -134,9 +171,9 @@ function MobileFooter() {
         </button>
         <div id="footer-contact" className={`${open.contact ? 'block' : 'hidden'} px-4 pb-3 pt-2`}>
           <ul className="space-y-2 text-sm text-gray-300">
-            <li>📍 Chennai, TN</li>
-            <li>📞 +91 9876543210</li>
-            <li>✉️ info@varshatravels.com</li>
+            <li>📍 57, 5th Cross Street, East Vaithiyanatha Puram, Thathaneri P.O, Madurai - 625018</li>
+            <li>📞 8778265650 / 9435360401</li>
+            <li>✉️ varshatravels06@gmail.com</li>
             <li>🕐 24/7 Support</li>
           </ul>
         </div>

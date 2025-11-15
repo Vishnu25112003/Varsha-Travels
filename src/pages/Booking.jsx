@@ -58,11 +58,11 @@ export default function Booking() {
 
       {/* Booking Form */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-4xl mx-auto bg-gradient-to-br from-white to-gray-50 border border-primary/20 rounded-3xl p-6 sm:p-8 lg:p-12">
+        <div className="max-w-4xl mx-auto bg-gradient-to-br from-white to-gray-50 border border-blue-600/20 rounded-3xl p-6 sm:p-8 lg:p-12">
           <form onSubmit={handleSubmit} className="space-y-8">
             {/* Personal Information */}
             <div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-6 pb-4 border-b border-primary/20">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6 pb-4 border-b border-blue-600/20">
                 Personal Information
               </h2>
               <div className="grid md:grid-cols-2 gap-6">
@@ -75,7 +75,7 @@ export default function Booking() {
                     name="fullName"
                     value={formData.fullName}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-white border border-primary/30 rounded-lg text-gray-900 focus:outline-none focus:border-primary transition"
+                    className="w-full px-4 py-3 bg-white border border-blue-600/30 rounded-lg text-gray-900 focus:outline-none focus:border-blue-600 transition"
                     placeholder="Your name"
                     required
                   />
@@ -90,7 +90,7 @@ export default function Booking() {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-white border border-primary/30 rounded-lg text-gray-900 focus:outline-none focus:border-primary transition"
+                    className="w-full px-4 py-3 bg-white border border-blue-600/30 rounded-lg text-gray-900 focus:outline-none focus:border-blue-600 transition"
                     placeholder="your@email.com"
                     required
                   />
@@ -105,7 +105,7 @@ export default function Booking() {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-white border border-primary/30 rounded-lg text-gray-900 focus:outline-none focus:border-primary transition"
+                    className="w-full px-4 py-3 bg-white border border-blue-600/30 rounded-lg text-gray-900 focus:outline-none focus:border-blue-600 transition"
                     placeholder="+91 XXXXX XXXXX"
                     required
                   />
@@ -115,7 +115,7 @@ export default function Booking() {
 
             {/* Travel Details */}
             <div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-6 pb-4 border-b border-primary/20">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6 pb-4 border-b border-blue-600/20">
                 Travel Details
               </h2>
               <div className="grid md:grid-cols-2 gap-6">
@@ -127,7 +127,7 @@ export default function Booking() {
                     name="destination"
                     value={formData.destination}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-white border border-primary/30 rounded-lg text-gray-900 focus:outline-none focus:border-primary transition"
+                    className="w-full px-4 py-3 bg-white border border-blue-600/30 rounded-lg text-gray-900 focus:outline-none focus:border-blue-600 transition"
                     required
                   >
                     <option value="">Select a destination</option>
@@ -147,7 +147,7 @@ export default function Booking() {
                     name="vehicle"
                     value={formData.vehicle}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-white border border-primary/30 rounded-lg text-gray-900 focus:outline-none focus:border-primary transition"
+                    className="w-full px-4 py-3 bg-white border border-blue-600/30 rounded-lg text-gray-900 focus:outline-none focus:border-blue-600 transition"
                     required
                   >
                     <option value="">Select a vehicle</option>
@@ -168,7 +168,7 @@ export default function Booking() {
                     name="pickupDate"
                     value={formData.pickupDate}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-white border border-primary/30 rounded-lg text-gray-900 focus:outline-none focus:border-primary transition"
+                    className="w-full px-4 py-3 bg-white border border-blue-600/30 rounded-lg text-gray-900 focus:outline-none focus:border-blue-600 transition"
                     required
                   />
                 </div>
@@ -182,7 +182,7 @@ export default function Booking() {
                     name="dropoffDate"
                     value={formData.dropoffDate}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-white border border-primary/30 rounded-lg text-gray-900 focus:outline-none focus:border-primary transition"
+                    className="w-full px-4 py-3 bg-white border border-blue-600/30 rounded-lg text-gray-900 focus:outline-none focus:border-blue-600 transition"
                     required
                   />
                 </div>
@@ -207,7 +207,7 @@ export default function Booking() {
 
             {/* Special Requests */}
             <div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-6 pb-4 border-b border-primary/20">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6 pb-4 border-b border-blue-600/20">
                 Additional Information
               </h2>
               <div>
@@ -218,7 +218,7 @@ export default function Booking() {
                   name="specialRequests"
                   value={formData.specialRequests}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-white border border-primary/30 rounded-lg text-gray-900 focus:outline-none focus:border-primary transition resize-none"
+                  className="w-full px-4 py-3 bg-white border border-blue-600/30 rounded-lg text-gray-900 focus:outline-none focus:border-blue-600 transition resize-none"
                   rows="5"
                   placeholder="Any special preferences, dietary requirements, or accessibility needs?"
                 />
@@ -226,7 +226,7 @@ export default function Booking() {
             </div>
 
             {/* Terms & Conditions */}
-            <div className="bg-primary/10 border border-primary/30 rounded-lg p-4">
+            <div className="bg-blue-600/10 border border-blue-600/30 rounded-lg p-4">
               <label className="flex items-start gap-3 cursor-pointer">
                 <input type="checkbox" className="mt-1" required />
                 <span className="text-gray-700 text-sm">
@@ -239,7 +239,7 @@ export default function Booking() {
             {/* Submit Button */}
             <button
               type="submit"
-              className="w-full py-4 bg-gradient-to-r from-primary to-secondary text-white font-bold text-lg rounded-lg hover:shadow-lg hover:shadow-primary/50 transition transform hover:scale-105"
+              className="w-full py-4 bg-gradient-to-r from-blue-600 to-indigo-500 text-white font-bold text-lg rounded-lg hover:shadow-lg hover:shadow-blue-600/50 transition transform hover:scale-105"
             >
               Complete Booking
             </button>
@@ -248,6 +248,93 @@ export default function Booking() {
               We will contact you within 2 hours to confirm your booking
             </p>
           </form>
+        </div>
+      </section>
+
+      {/* Quick Contact CTA */}
+      <section className="px-4 sm:px-6 lg:px-8 pb-16 bg-gradient-to-b from-white to-gray-50">
+        <div className="max-w-5xl mx-auto">
+          <div className="grid gap-4 sm:gap-6 md:grid-cols-3">
+            {/* Text block */}
+            <div className="md:col-span-1 bg-white border border-blue-100 rounded-2xl p-5 sm:p-6 shadow-sm flex flex-col justify-center">
+              <p className="text-xs font-semibold tracking-wide text-blue-600 uppercase mb-1">
+                Need quick help?
+              </p>
+              <h2 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">
+                Talk to our travel team
+              </h2>
+              <p className="text-gray-600 text-sm">
+                Prefer WhatsApp or a direct call? Reach us instantly using the options on the right.
+              </p>
+            </div>
+
+            {/* Call card */}
+            <div className="bg-white border border-blue-100 rounded-2xl p-5 sm:p-6 shadow-sm flex flex-col justify-between">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-10 h-10 rounded-full bg-blue-600/10 flex items-center justify-center text-blue-700">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    className="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="text-xs uppercase tracking-wide text-gray-500">Call us</p>
+                  <p className="text-base font-semibold text-gray-900">+91 8778265650</p>
+                </div>
+              </div>
+              <p className="text-gray-600 text-xs sm:text-sm mb-3">
+                For urgent pickups, last‑minute changes, or same‑day bookings.
+              </p>
+              <a
+                href="tel:+918778265650"
+                className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-full bg-blue-600 text-white text-sm font-semibold hover:bg-blue-700 transition"
+              >
+                Call Now
+              </a>
+            </div>
+
+            {/* Email card */}
+            <div className="bg-white border border-blue-100 rounded-2xl p-5 sm:p-6 shadow-sm flex flex-col justify-between">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-10 h-10 rounded-full bg-indigo-600/10 flex items-center justify-center text-indigo-700">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    className="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <rect x="3" y="5" width="18" height="14" rx="2" ry="2" />
+                    <polyline points="3 7 12 13 21 7" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="text-xs uppercase tracking-wide text-gray-500">Email us</p>
+                  <p className="text-base font-semibold text-gray-900">varshatravels06@gmail.com</p>
+                </div>
+              </div>
+              <p className="text-gray-600 text-xs sm:text-sm mb-3">
+                Share your full trip details and we&apos;ll respond with a customized quote.
+              </p>
+              <a
+                href="mailto:varshatravels06@gmail.com?subject=Travel%20Enquiry%20-%20Varsha%20Travels&body=Hi%20Varsha%20Travels,%0D%0A%0D%0AI%20would%20like%20to%20enquire%20about%20your%20travel%20services.%0D%0A%0D%0AName:%0D%0APhone:%0D%0ATravel%20dates:%0D%0ADestination:%0D%0A%0D%0AThank%20you!"
+                className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-full border border-indigo-500 text-indigo-700 text-sm font-semibold hover:bg-indigo-50 transition"
+              >
+                Email Template
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -278,9 +365,9 @@ export default function Booking() {
             ].map((faq, idx) => (
               <div
                 key={idx}
-                className="bg-gradient-to-br from-white to-gray-50 border border-primary/20 rounded-2xl p-6 hover:border-primary/50 transition"
+                className="bg-gradient-to-br from-white to-gray-50 border border-blue-600/20 rounded-2xl p-6 hover:border-blue-600/50 transition"
               >
-                <h3 className="text-lg font-bold text-primary mb-3">{faq.q}</h3>
+                <h3 className="text-lg font-bold text-blue-700 mb-3">{faq.q}</h3>
                 <p className="text-gray-600">{faq.a}</p>
               </div>
             ))}

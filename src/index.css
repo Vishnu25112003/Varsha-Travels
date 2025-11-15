@@ -37,12 +37,12 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #2D7C5C;
+  background: var(--primary);
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #2B7BA9;
+  background: var(--secondary);
 }
 
 /* Utility to allow long words/names to wrap within small boxes/chips */

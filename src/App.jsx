@@ -7,6 +7,7 @@ import Destination from './pages/Destination'
 import Gallery from './pages/Gallery'
 import Contact from './pages/Contact'
 import Booking from './pages/Booking'
+import Reviews from './pages/Reviews'
 import './App.css'
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/booking" element={<Booking />} />
+            <Route path="/reviews" element={<Reviews />} />
           </Routes>
         </main>
         <Footer />

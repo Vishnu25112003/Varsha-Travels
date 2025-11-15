@@ -13,9 +13,10 @@ export default function About() {
   ];
 
   return (
-    <div className="min-h-screen bg-white mt-7 pt-20">
+    <div className="min-h-screen bg-white pt-20">
       {/* Hero Image */}
-      <div className="relative h-[600px] w-full overflow-hidden">
+      {/* Reduced height hero banner (a bit taller) */}
+      <div className="relative w-full h-80 sm:h-[420px] md:h-[480px] lg:h-[520px] overflow-hidden">
         <img
           src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1200&h=600&fit=crop"
           alt="Varsha Travels"

@@ -40,7 +40,7 @@ export default function Contact() {
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <div className="bg-gradient-to-br from-white to-gray-50 border border-primary/20 rounded-3xl p-6 sm:p-8">
+          <div className="bg-gradient-to-br from-white to-gray-50 border border-blue-600/20 rounded-3xl p-6 sm:p-8">
             <h2 className="text-3xl font-bold text-gray-900 mb-8">
               Send us a Message
             </h2>
@@ -55,7 +55,7 @@ export default function Contact() {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-white border border-primary/30 rounded-lg text-gray-900 focus:outline-none focus:border-primary transition"
+                  className="w-full px-4 py-3 bg-white border border-blue-600/30 rounded-lg text-gray-900 focus:outline-none focus:border-blue-600 transition"
                   placeholder="Your name"
                   required
                 />
@@ -71,7 +71,7 @@ export default function Contact() {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-white border border-primary/30 rounded-lg text-gray-900 focus:outline-none focus:border-primary transition"
+                    className="w-full px-4 py-3 bg-white border border-blue-600/30 rounded-lg text-gray-900 focus:outline-none focus:border-blue-600 transition"
                     placeholder="your@email.com"
                     required
                   />
@@ -86,7 +86,7 @@ export default function Contact() {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-white border border-primary/30 rounded-lg text-gray-900 focus:outline-none focus:border-primary transition"
+                    className="w-full px-4 py-3 bg-white border border-blue-600/30 rounded-lg text-gray-900 focus:outline-none focus:border-blue-600 transition"
                     placeholder="+91 XXXXX XXXXX"
                     required
                   />
@@ -102,7 +102,7 @@ export default function Contact() {
                   name="subject"
                   value={formData.subject}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-white border border-primary/30 rounded-lg text-gray-900 focus:outline-none focus:border-primary transition"
+                  className="w-full px-4 py-3 bg-white border border-blue-600/30 rounded-lg text-gray-900 focus:outline-none focus:border-blue-600 transition"
                   placeholder="How can we help?"
                   required
                 />
@@ -116,7 +116,7 @@ export default function Contact() {
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-white border border-primary/30 rounded-lg text-gray-900 focus:outline-none focus:border-primary transition resize-none"
+                  className="w-full px-4 py-3 bg-white border border-blue-600/30 rounded-lg text-gray-900 focus:outline-none focus:border-blue-600 transition resize-none"
                   rows="5"
                   placeholder="Your message..."
                   required
@@ -125,7 +125,7 @@ export default function Contact() {
 
               <button
                 type="submit"
-                className="w-full py-3 bg-gradient-to-r from-primary to-secondary text-white font-bold rounded-lg hover:shadow-lg hover:shadow-primary/50 transition transform hover:scale-105"
+                className="w-full py-3 bg-gradient-to-r from-blue-600 to-indigo-500 text-white font-bold rounded-lg hover:shadow-lg hover:shadow-blue-600/50 transition transform hover:scale-105"
               >
                 Send Message
               </button>
@@ -140,7 +140,7 @@ export default function Contact() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {/* Address */}
-              <div className="bg-gradient-to-br from-white to-gray-50 border border-primary/20 rounded-2xl p-8 hover:border-primary/50 transition">
+              <div className="bg-gradient-to-br from-white to-gray-50 border border-blue-600/20 rounded-2xl p-8 hover:border-blue-600/50 transition">
                 <div className="flex flex-wrap sm:flex-nowrap gap-4 items-start">
                   <div className="text-4xl shrink-0">📍</div>
                   <div className="min-w-0">
@@ -150,18 +150,18 @@ export default function Contact() {
                     <p className="text-gray-600 break-words">
                       Varsha Travels
                       <br />
-                      123 Travels Road
+                      57, 5th Cross Street
                       <br />
-                      Chennai, Tamil Nadu - 600001
+                      East Vaithiyanatha Puram, Thathaneri P.O
                       <br />
-                      India
+                      Madurai - 625018, India
                     </p>
                   </div>
                 </div>
               </div>
 
               {/* Phone */}
-              <div className="bg-gradient-to-br from-white to-gray-50 border border-primary/20 rounded-2xl p-8 hover:border-primary/50 transition">
+              <div className="bg-gradient-to-br from-white to-gray-50 border border-blue-600/20 rounded-2xl p-8 hover:border-blue-600/50 transition">
                 <div className="flex flex-wrap sm:flex-nowrap gap-4 items-start">
                   <div className="text-4xl shrink-0">📞</div>
                   <div className="min-w-0">
@@ -169,21 +169,21 @@ export default function Contact() {
                       Phone Numbers
                     </h3>
                     <p className="text-gray-600 break-words mb-2">
-                      Main:{" "}
+                      Phone 1:{" "}
                       <a
-                        href="tel:+919876543210"
-                        className="text-primary hover:text-secondary"
+                        href="tel:+918778265650"
+                        className="text-blue-700 hover:text-indigo-500"
                       >
-                        +91 9876543210
+                        8778265650
                       </a>
                     </p>
                     <p className="text-gray-600 break-words">
-                      Support:{" "}
+                      Phone 2:{" "}
                       <a
-                        href="tel:+919876543211"
-                        className="text-primary hover:text-secondary"
+                        href="tel:+919435360401"
+                        className="text-blue-700 hover:text-indigo-500"
                       >
-                        +91 9876543211
+                        9435360401
                       </a>
                     </p>
                     <p className="text-gray-600 text-sm mt-2">Available 24/7</p>
@@ -192,7 +192,7 @@ export default function Contact() {
               </div>
 
               {/* Email */}
-              <div className="bg-gradient-to-br from-white to-gray-50 border border-primary/20 rounded-2xl p-8 hover:border-primary/50 transition">
+              <div className="bg-gradient-to-br from-white to-gray-50 border border-blue-600/20 rounded-2xl p-8 hover:border-blue-600/50 transition">
                 <div className="flex flex-wrap sm:flex-nowrap gap-4 items-start">
                   <div className="text-4xl shrink-0">✉️</div>
                   <div className="min-w-0">
@@ -201,26 +201,10 @@ export default function Contact() {
                     </h3>
                     <p className="text-gray-600 break-words mb-1">
                       <a
-                        href="mailto:info@varshatravels.com"
-                        className="text-primary hover:text-secondary"
+                        href="mailto:varshatravels06@gmail.com"
+                        className="text-blue-700 hover:text-indigo-500"
                       >
-                        info@varshatravels.com
-                      </a>
-                    </p>
-                    <p className="text-gray-600 break-words mb-1">
-                      <a
-                        href="mailto:bookings@varshatravels.com"
-                        className="text-primary hover:text-secondary"
-                      >
-                        bookings@varshatravels.com
-                      </a>
-                    </p>
-                    <p className="text-gray-600 break-words">
-                      <a
-                        href="mailto:support@varshatravels.com"
-                        className="text-primary hover:text-secondary"
-                      >
-                        support@varshatravels.com
+                        varshatravels06@gmail.com
                       </a>
                     </p>
                   </div>
@@ -248,7 +232,7 @@ export default function Contact() {
             </div>
 
             {/* Social Links */}
-            <div className="mt-8 pt-8 border-t border-primary/20">
+            <div className="mt-8 pt-8 border-t border-blue-600/20">
               <h3 className="text-xl font-bold text-gray-900 mb-4">
                 Follow Us
               </h3>
@@ -259,10 +243,10 @@ export default function Contact() {
                   { icon: "𝕏", name: "Twitter" },
                   { icon: "💬", name: "WhatsApp" },
                 ].map((social, idx) => (
-                  <a
-                    key={idx}
-                    href="#"
-                    className="w-12 h-12 rounded-full bg-primary/10 hover:bg-primary/20 text-primary font-bold flex items-center justify-center transition transform hover:scale-110"
+                    <a
+                      key={idx}
+                      href="#"
+                      className="w-12 h-12 rounded-full bg-blue-600/10 hover:bg-blue-600/20 text-blue-700 font-bold flex items-center justify-center transition transform hover:scale-110"
                     title={social.name}
                   >
                     {social.icon}
@@ -280,14 +264,14 @@ export default function Contact() {
           <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
             Find Us Here
           </h2>
-          <div className="bg-gradient-to-br from-white to-gray-50 border border-primary/20 rounded-2xl overflow-hidden h-64 sm:h-80 lg:h-96">
+          <div className="bg-gradient-to-br from-white to-gray-50 border border-blue-600/20 rounded-2xl overflow-hidden h-64 sm:h-80 lg:h-96">
             <iframe
               width="100%"
               height="100%"
               style={{ border: 0 }}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.0742813305063!2d80.27823!3d13.067392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5263d7b7e15a6d%3A0x5c5c5c5c5c5c5c5c!2sChennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1234567890"
+              src="https://www.google.com/maps?q=9.942378,78.1041718&hl=en&z=16&output=embed"
             />
           </div>
         </div>

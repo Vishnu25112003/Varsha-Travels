@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import Carousel from "../components/Carousel";
 import { placeImages } from "../data/images";
 import { PlaceCard, FeatureCard } from "../components/Card";
+import { useReviews } from "../hooks/useReviews";
 
 export default function Home() {
+  const { reviews } = useReviews();
   const heroSlides = [
     {
       src: "https://lp-cms-production.imgix.net/2019-06/GettyImages-149315250_full.jpg",
@@ -36,7 +38,7 @@ export default function Home() {
   const heroSlidesJSX = heroSlides.map((s, i) => (
     <div key={i} className="relative w-full h-full">
       <img src={s.src} alt={s.title} className="w-full h-full object-cover" />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/25 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-black/10 to-transparent" />
       <div className="absolute bottom-10 sm:bottom-14 left-4 sm:left-10 right-4 sm:right-auto max-w-xl">
         <span className="inline-block mb-3 rounded-full bg-white/10 border border-white/30 px-3 py-1 text-[10px] sm:text-xs text-white/90">
           Varsha Travels
@@ -95,11 +97,12 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white pt-20">
       {/* Featured Carousel Section */}
       <section className="p-0 m-0">
         <div className="w-full">
-          <div className="h-[60vh] sm:h-[72vh] md:h-[85vh] lg:h-[calc(100vh+120px)] pt-[120px] lg:pt-0 lg:-mt-[120px]">
+          {/* On mobile/tablet: tall banner; on desktop: full screen under navbar */}
+          <div className="h-[60vh] sm:h-[70vh] md:h-[80vh] lg:h-[calc(100vh-80px)]">
             <Carousel slides={heroSlidesJSX} autoPlay={true} interval={4500} />
           </div>
         </div>
@@ -109,7 +112,7 @@ export default function Home() {
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-slate-50">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="h-80 rounded-2xl overflow-hidden border border-primary/20 shadow-lg">
+            <div className="h-80 rounded-2xl overflow-hidden border border-blue-600/20 shadow-lg">
               <img
                 src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=600&h=400&fit=crop"
                 alt="Varsha Travels"
@@ -135,7 +138,7 @@ export default function Home() {
               </p>
               <Link
                 to="/about"
-                className="px-8 py-3 bg-gradient-to-r from-primary to-secondary text-white font-bold rounded-full hover:shadow-lg hover:shadow-primary/50 transition transform hover:scale-105 inline-block"
+                className="px-8 py-3 bg-gradient-to-r from-blue-600 to-indigo-500 text-white font-bold rounded-full hover:shadow-lg hover:shadow-blue-600/50 transition transform hover:scale-105 inline-block"
               >
                 Read More →
               </Link>
@@ -207,10 +210,106 @@ export default function Home() {
           </p>
           <Link
             to="/contact"
-            className="px-10 py-4 bg-gradient-to-r from-primary to-secondary text-white font-bold rounded-full hover:shadow-lg hover:shadow-primary/50 transition transform hover:scale-105 inline-block text-lg"
+            className="px-10 py-4 bg-gradient-to-r from-blue-600 to-indigo-500 text-white font-bold rounded-full hover:shadow-lg hover:shadow-blue-600/50 transition transform hover:scale-105 inline-block text-lg"
           >
             Contact Us
           </Link>
+        </div>
+      </section>
+
+      {/* Reviews Section (between contact and footer) */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white border-t border-gray-100">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-8">
+            <div className="max-w-xl">
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2">
+                What Our Travellers Say
+              </h2>
+              <p className="text-gray-600 text-sm sm:text-base">
+                Real feedback from guests who explored South India with Varsha Travels.
+              </p>
+            </div>
+            <Link
+              to="/reviews"
+              className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-gradient-to-r from-blue-600 to-indigo-500 text-white text-sm sm:text-base font-semibold shadow hover:shadow-lg hover:shadow-blue-600/40 transition-transform hover:scale-105"
+            >
+              + Add Review
+            </Link>
+          </div>
+
+          {reviews && reviews.length > 0 ? (
+            <div className="w-full h-[260px] sm:h-[240px] md:h-[220px] lg:h-[260px]">
+              <Carousel
+                autoPlay
+                interval={6000}
+                slides={reviews.map((review) => (
+                  <div
+                    key={review.id}
+                    className="relative w-full h-full flex items-center justify-center"
+                  >
+                    <div className="max-w-3xl w-full mx-auto bg-gradient-to-br from-white to-slate-50 border border-blue-600/15 rounded-3xl shadow-sm px-5 sm:px-8 py-6 sm:py-8 flex flex-col md:flex-row gap-4 md:gap-6">
+                      {review.mediaUrl && (
+                        <div className="hidden sm:block w-40 h-32 rounded-2xl overflow-hidden bg-gray-100 shrink-0 flex items-center justify-center">
+                          {review.mediaType === "video" ? (
+                            <video
+                              src={review.mediaUrl}
+                              className="w-full h-full object-cover"
+                              controls
+                              playsInline
+                            />
+                          ) : (
+                            <img
+                              src={review.mediaUrl}
+                              alt={review.trip || review.name}
+                              className="w-full h-full object-cover"
+                            />
+                          )}
+                        </div>
+                      )}
+                      <div className="flex-1 min-w-0">
+                        <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
+                          <p className="font-semibold text-gray-900 text-sm sm:text-base truncate max-w-[65%]">
+                            {review.name}
+                          </p>
+                          {review.date && (
+                            <span className="text-[10px] sm:text-xs text-gray-500 bg-gray-100 px-2 py-0.5 rounded-full">
+                              {review.date}
+                            </span>
+                          )}
+                        </div>
+                        {review.trip && (
+                          <p className="text-[11px] sm:text-xs text-blue-700 mb-1">
+                            {review.trip}
+                          </p>
+                        )}
+                        <div className="flex items-center gap-1 mb-2">
+                          {Array.from({ length: 5 }).map((_, index) => (
+                            <span
+                              key={index}
+                              className={
+                                index < (review.rating || 0)
+                                  ? "text-yellow-400"
+                                  : "text-gray-300"
+                              }
+                            >
+                              ★
+                            </span>
+                          ))}
+                        </div>
+                        <p className="text-xs sm:text-sm text-gray-700 leading-relaxed line-clamp-4">
+                          {review.content}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              />
+            </div>
+          ) : (
+            <div className="border border-dashed border-blue-500/40 rounded-2xl p-6 text-center bg-blue-50/40 text-sm text-gray-600">
+              No reviews yet. Be the first to share your experience.
+            </div>
+          )}
         </div>
       </section>
     </div>

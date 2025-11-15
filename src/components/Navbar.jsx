@@ -38,7 +38,7 @@ export default function Navbar() {
 
   // Expose navbar visibility to CSS consumers (e.g., pages needing sticky offsets)
   useEffect(() => {
-    const cls = 'nav-hidden';
+    const cls = "nav-hidden";
     if (hidden) {
       document.body.classList.add(cls);
     } else {
@@ -51,8 +51,7 @@ export default function Navbar() {
       className={`fixed w-full top-0 z-50 transform transition-transform duration-300 ${hidden ? "-translate-y-full" : "translate-y-0"}`}
     >
       {/* Top contact bar */}
-      <div className="bg-gradient-to-r from-primary to-secondary text-white">
-        {/* Desktop/Tablet: tagline left, contact right */}
+      {/* <div className="bg-gradient-to-r from-primary to-secondary text-white">
         <div className="hidden sm:flex max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-10 items-center justify-between">
           <div className="text-xs sm:text-sm font-medium">
             Live the Journey, Cherish the Memories & English
@@ -69,7 +68,6 @@ export default function Navbar() {
             </a>
           </div>
         </div>
-        {/* Mobile: continuous scrolling marquee */}
         <div className="sm:hidden h-10 overflow-hidden">
           <div className="marquee h-full flex items-center">
             <div className="marquee-item">
@@ -82,7 +80,7 @@ export default function Navbar() {
             </div>
           </div>
         </div>
-      </div>
+      </div>*/}
 
       {/* Main navbar */}
       <div className="bg-white/30 backdrop-blur-2xl border-b border-white/20 shadow-md supports-[backdrop-filter]:bg-white/30">
@@ -93,12 +91,12 @@ export default function Navbar() {
               to="/"
               className="flex items-center gap-3 hover:opacity-80 transition"
             >
-              <div className="w-12 h-12 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center">
+              <div className="w-12 h-12 rounded-full bg-gradient-to-r from-blue-600 to-indigo-500 flex items-center justify-center">
                 <span className="text-white font-bold text-xl">V</span>
               </div>
               <div className="hidden sm:block">
                 <span className="text-gray-900 font-bold text-lg">VARSHA</span>
-                <p className="text-primary text-xs">TRAVELS</p>
+                <p className="text-blue-700 text-xs">TRAVELS</p>
               </div>
             </Link>
 
@@ -106,31 +104,31 @@ export default function Navbar() {
             <div className="hidden lg:flex items-center gap-10">
               <Link
                 to="/"
-                className={`transition font-semibold ${isActive("/") ? "text-primary" : "text-gray-700 hover:text-primary"}`}
+                className={`transition font-semibold ${isActive("/") ? "text-blue-700" : "text-gray-700 hover:text-blue-700"}`}
               >
                 Home
               </Link>
               <Link
                 to="/about"
-                className={`transition font-semibold ${isActive("/about") ? "text-primary" : "text-gray-700 hover:text-primary"}`}
+                className={`transition font-semibold ${isActive("/about") ? "text-blue-700" : "text-gray-700 hover:text-blue-700"}`}
               >
                 About
               </Link>
               <Link
                 to="/destination"
-                className={`transition font-semibold ${isActive("/destination") ? "text-primary" : "text-gray-700 hover:text-primary"}`}
+                className={`transition font-semibold ${isActive("/destination") ? "text-blue-700" : "text-gray-700 hover:text-blue-700"}`}
               >
                 Destination
               </Link>
               <Link
                 to="/gallery"
-                className={`transition font-semibold ${isActive("/gallery") ? "text-primary" : "text-gray-700 hover:text-primary"}`}
+                className={`transition font-semibold ${isActive("/gallery") ? "text-blue-700" : "text-gray-700 hover:text-blue-700"}`}
               >
                 Gallery
               </Link>
               <Link
                 to="/contact"
-                className={`transition font-semibold ${isActive("/contact") ? "text-primary" : "text-gray-700 hover:text-primary"}`}
+                className={`transition font-semibold ${isActive("/contact") ? "text-blue-700" : "text-gray-700 hover:text-blue-700"}`}
               >
                 Contact
               </Link>
@@ -139,7 +137,7 @@ export default function Navbar() {
             {/* Right - Book Now Button */}
             <Link
               to="/booking"
-              className="hidden lg:block px-6 py-2 bg-gradient-to-r from-primary to-secondary text-white font-bold rounded-full hover:shadow-lg hover:shadow-primary/50 transition transform hover:scale-105"
+              className="hidden lg:block px-6 py-2 bg-gradient-to-r from-blue-600 to-indigo-500 text-white font-bold rounded-full hover:shadow-lg hover:shadow-blue-600/50 transition transform hover:scale-105"
             >
               Book Now
             </Link>
@@ -167,40 +165,40 @@ export default function Navbar() {
 
           {/* Mobile Menu */}
           {isOpen && (
-            <div className="lg:hidden pb-5 space-y-2 border-t border-primary/20 pt-4 bg-white">
+            <div className="lg:hidden pb-5 space-y-2 border-t border-blue-600/20 pt-4 bg-white">
               <div className="px-2 space-y-2">
                 <Link
                   to="/"
                   onClick={handleNavClick}
-                  className={`block w-full text-base font-semibold px-4 py-3 rounded-lg transition ${isActive("/") ? "bg-primary/10 text-primary" : "text-gray-700 hover:bg-primary/5 hover:text-primary"}`}
+                  className={`block w-full text-base font-semibold px-4 py-3 rounded-lg transition ${isActive("/") ? "bg-blue-600/10 text-blue-700" : "text-gray-700 hover:bg-blue-600/5 hover:text-blue-700"}`}
                 >
                   Home
                 </Link>
                 <Link
                   to="/about"
                   onClick={handleNavClick}
-                  className={`block w-full text-base font-semibold px-4 py-3 rounded-lg transition ${isActive("/about") ? "bg-primary/10 text-primary" : "text-gray-700 hover:bg-primary/5 hover:text-primary"}`}
+                  className={`block w-full text-base font-semibold px-4 py-3 rounded-lg transition ${isActive("/about") ? "bg-blue-600/10 text-blue-700" : "text-gray-700 hover:bg-blue-600/5 hover:text-blue-700"}`}
                 >
                   About
                 </Link>
                 <Link
                   to="/destination"
                   onClick={handleNavClick}
-                  className={`block w-full text-base font-semibold px-4 py-3 rounded-lg transition ${isActive("/destination") ? "bg-primary/10 text-primary" : "text-gray-700 hover:bg-primary/5 hover:text-primary"}`}
+                  className={`block w-full text-base font-semibold px-4 py-3 rounded-lg transition ${isActive("/destination") ? "bg-blue-600/10 text-blue-700" : "text-gray-700 hover:bg-blue-600/5 hover:text-blue-700"}`}
                 >
                   Destination
                 </Link>
                 <Link
                   to="/gallery"
                   onClick={handleNavClick}
-                  className={`block w-full text-base font-semibold px-4 py-3 rounded-lg transition ${isActive("/gallery") ? "bg-primary/10 text-primary" : "text-gray-700 hover:bg-primary/5 hover:text-primary"}`}
+                  className={`block w-full text-base font-semibold px-4 py-3 rounded-lg transition ${isActive("/gallery") ? "bg-blue-600/10 text-blue-700" : "text-gray-700 hover:bg-blue-600/5 hover:text-blue-700"}`}
                 >
                   Gallery
                 </Link>
                 <Link
                   to="/contact"
                   onClick={handleNavClick}
-                  className={`block w-full text-base font-semibold px-4 py-3 rounded-lg transition ${isActive("/contact") ? "bg-primary/10 text-primary" : "text-gray-700 hover:bg-primary/5 hover:text-primary"}`}
+                  className={`block w-full text-base font-semibold px-4 py-3 rounded-lg transition ${isActive("/contact") ? "bg-blue-600/10 text-blue-700" : "text-gray-700 hover:bg-blue-600/5 hover:text-blue-700"}`}
                 >
                   Contact
                 </Link>
@@ -210,7 +208,7 @@ export default function Navbar() {
                 <Link
                   to="/booking"
                   onClick={handleNavClick}
-                  className="block w-full text-center px-6 py-3 bg-gradient-to-r from-primary to-secondary text-white font-bold rounded-full"
+                  className="block w-full text-center px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-500 text-white font-bold rounded-full"
                 >
                   Book Now
                 </Link>
@@ -218,11 +216,44 @@ export default function Navbar() {
 
               <div className="px-2 pt-3">
                 <div className="grid grid-cols-2 gap-3">
-                  <a href="tel:+919876543210" className="w-full text-center px-4 py-2 rounded-full border border-primary/30 text-primary font-semibold hover:bg-primary/5">
-                    Call Us
+                  <a
+                    href="tel:+918778265650"
+                    className="w-full inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full border border-blue-600/30 text-blue-700 font-semibold hover:bg-blue-600/5"
+                  >
+                    {/* Phone icon */}
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      className="w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                    </svg>
+                    <span>Call Us</span>
                   </a>
-                  <a href="mailto:info@varshatravels.com" className="w-full text-center px-4 py-2 rounded-full border border-primary/30 text-primary font-semibold hover:bg-primary/5">
-                    Email Us
+                  <a
+                    href="mailto:varshatravels06@gmail.com?subject=Travel%20Enquiry%20-%20Varsha%20Travels&body=Hi%20Varsha%20Travels,%0D%0A%0D%0AI%20would%20like%20to%20enquire%20about%20your%20travel%20services.%0D%0A%0D%0AName:%0D%0APhone:%0D%0ATravel%20dates:%0D%0ADestination:%0D%0A%0D%0AThank%20you!"
+                    className="w-full inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full border border-blue-600/30 text-blue-700 font-semibold hover:bg-blue-600/5"
+                  >
+                    {/* Email icon */}
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      className="w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <rect x="3" y="5" width="18" height="14" rx="2" ry="2" />
+                      <polyline points="3 7 12 13 21 7" />
+                    </svg>
+                    <span>Email Us</span>
                   </a>
                 </div>
               </div>

@@ -1,3 +1,5 @@
+import { themeColors } from './src/theme.js';
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -8,8 +10,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#2D7C5C',
-        secondary: '#2B7BA9',
+        primary: themeColors.primary,
+        secondary: themeColors.secondary,
       },
       animation: {
         'fade-in': 'fadeIn 0.6s ease-in',

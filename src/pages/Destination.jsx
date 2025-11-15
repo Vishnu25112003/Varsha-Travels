@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Carousel from "../components/Carousel";
 import { getPlacesByState, getUniqueStates } from "../data/places";
 import { placeImages } from "../data/images";
 import { PlaceCard } from "../components/Card";
 
 export default function Destination() {
+  const navigate = useNavigate();
   const [selectedState, setSelectedState] = useState("all");
   const [selectedPlace, setSelectedPlace] = useState(null);
 
@@ -18,14 +20,15 @@ export default function Destination() {
   const states = getUniqueStates();
 
   return (
-    <div className="min-h-screen bg-white pt-[120px]">
+    <div className="min-h-screen bg-white pt-20">
       {/* Hero Carousel */}
-      <div className="w-full h-[45vh] sm:h-[55vh] md:h-[65vh] lg:h-[calc(100vh-120px)]">
+      {/* Mobile/tablet: slightly taller; desktop: full-screen under navbar */}
+      <div className="w-full h-[300px] sm:h-[380px] md:h-[460px] lg:h-[calc(100vh-80px)]">
         <Carousel slides={carouselImages} autoPlay={true} interval={5000} />
       </div>
 
       {/* Filter Section (sticky toolbar) */}
-      <section className="sticky top-[120px] dest-filter-sticky z-40 bg-white/70 backdrop-blur-md supports-[backdrop-filter]:bg-white/50 border-b border-primary/10">
+      <section className="sticky top-20 dest-filter-sticky z-40 bg-white/70 backdrop-blur-md supports-[backdrop-filter]:bg-white/50 border-b border-blue-600/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <h2 className="text-lg sm:text-xl font-bold text-gray-900">
@@ -38,7 +41,7 @@ export default function Destination() {
                   onClick={() => setSelectedState(state)}
                   className={`px-4 py-2 rounded-full text-sm sm:text-base font-semibold transition shadow-sm border ${
                     selectedState === state
-                      ? "bg-gradient-to-r from-primary to-secondary text-white border-transparent"
+                      ? "bg-gradient-to-r from-blue-600 to-indigo-500 text-white border-transparent"
                       : "bg-white/80 text-gray-800 hover:bg-gray-100 border-gray-200"
                   }`}
                 >
@@ -69,10 +72,10 @@ export default function Destination() {
       {/* Place Detail Modal */}
       {selectedPlace && (
         <div className="fixed inset-0 bg-white/80 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-          <div className="bg-gradient-to-br from-white to-gray-50 border border-primary/30 rounded-3xl max-w-2xl w-full max-h-[80vh] overflow-y-auto">
-            <button
-              onClick={() => setSelectedPlace(null)}
-              className="absolute top-6 right-6 text-gray-900 hover:text-primary transition text-2xl bg-white/50 w-10 h-10 flex items-center justify-center rounded-full"
+          <div className="bg-gradient-to-br from-white to-gray-50 border border-blue-600/30 rounded-3xl max-w-2xl w-full max-h-[80vh] overflow-y-auto">
+              <button
+                onClick={() => setSelectedPlace(null)}
+                className="absolute top-6 right-6 text-gray-900 hover:text-blue-700 transition text-2xl bg-white/50 w-10 h-10 flex items-center justify-center rounded-full"
             >
               ✕
             </button>
@@ -90,7 +93,7 @@ export default function Destination() {
               <h2 className="text-4xl font-bold text-gray-900 mb-2">
                 {selectedPlace.name}
               </h2>
-              <p className="text-primary font-semibold text-lg mb-6">
+              <p className="text-blue-700 font-semibold text-lg mb-6">
                 {selectedPlace.state}
               </p>
 
@@ -99,14 +102,14 @@ export default function Destination() {
               </p>
 
               <div className="mb-6">
-                <h3 className="text-xl font-bold text-primary mb-4">
+                <h3 className="text-xl font-bold text-blue-700 mb-4">
                   Highlights
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {selectedPlace.highlights.map((highlight, idx) => (
                     <div
                       key={idx}
-                      className="bg-primary/10 border border-primary/50 rounded-lg p-3 text-gray-900 break-anywhere"
+                      className="bg-blue-600/10 border border-blue-600/50 rounded-lg p-3 text-gray-900 break-anywhere"
                     >
                       ✓ {highlight}
                     </div>
@@ -114,7 +117,12 @@ export default function Destination() {
                 </div>
               </div>
 
-              <button className="w-full py-3 bg-gradient-to-r from-primary to-secondary text-white font-bold rounded-lg hover:shadow-lg hover:shadow-primary/50 transition">
+              <button
+                className="w-full py-3 bg-gradient-to-r from-blue-600 to-indigo-500 text-white font-bold rounded-lg hover:shadow-lg hover:shadow-blue-600/50 transition"
+                onClick={() => {
+                  navigate("/booking");
+                }}
+              >
                 Book This Destination
               </button>
             </div>

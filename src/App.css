@@ -6,6 +6,7 @@ body {
 }
 
 :root {
-  --primary: #2D7C5C;
-  --secondary: #2B7BA9;
+  /* Keep in sync with src/theme.js */
+  --primary: #1D4ED8; /* deep blue */
+  --secondary: #F97316; /* warm accent (orange) */
 }

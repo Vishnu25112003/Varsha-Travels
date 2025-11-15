@@ -51,9 +51,10 @@ export default function Gallery() {
     setCurrent((i) => (i - 1 + vehicleGallery.length) % vehicleGallery.length);
 
   return (
-    <div className="min-h-screen bg-white pt-[120px]">
+    <div className="min-h-screen bg-white pt-20">
       {/* Car Carousel */}
-      <div className="w-full h-[45vh] sm:h-[55vh] md:h-[65vh] lg:h-[calc(100vh-120px)]">
+      {/* Mobile/tablet: slightly taller; desktop: full-screen under navbar */}
+      <div className="w-full h-[300px] sm:h-[380px] md:h-[460px] lg:h-[calc(100vh-80px)]">
         <Carousel slides={carImages} autoPlay={true} interval={5000} />
       </div>
 

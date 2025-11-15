@@ -17,11 +17,14 @@ export const placeImages = {
     "https://images.unsplash.com/flagged/photo-1592544858330-7ac10a0468e5?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170",
   Mysore:
     "https://images.unsplash.com/photo-1590766940554-634a7ed41450?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1599",
-  Goa: "https://images.unsplash.com/photo-1614082242765-7c98ca0f3df3?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Z29hJTIwYmVhY2h8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=500",
+  Tirupati:
+    "https://images.unsplash.com/photo-1583740839077-f618513b35d1?ixlib=rb-4.1.0&auto=format&fit=crop&q=80&w=1600",
   Alleppey:
     "https://images.unsplash.com/photo-1718821585734-e22a8fc425a2?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1074",
   Thekkady:
     "https://images.unsplash.com/photo-1716404985743-8c0e007cb358?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1168",
+  Puducherry:
+    "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?ixlib=rb-4.1.0&auto=format&fit=crop&q=80&w=1600",
 };
 
 // Vehicle images

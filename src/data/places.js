@@ -129,13 +129,18 @@ export const placesData = [
   },
   {
     id: 10,
-    name: "Goa",
-    state: "Goa",
-    image: "🏖️",
-    description: "Beaches, backwaters, and a unique blend of cultures",
+    name: "Tirupati",
+    state: "Andhra Pradesh",
+    image: "🛕",
+    description:
+      "Famous temple town and major pilgrimage center in Andhra Pradesh",
     details:
-      "Goa is India's favorite beach destination known for its golden beaches, Portuguese colonial architecture, and vibrant nightlife. Enjoy water sports, explore historic churches and forts, and experience the laid-back beach lifestyle.",
-    highlights: ["Beaches", "Backwaters", "Churches", "Water Sports"],
+      "Tirupati is one of the most important pilgrimage centers in India, home to the renowned Sri Venkateswara Temple in Tirumala. Experience the spiritual atmosphere, scenic hills, and historic temples spread across the region.",
+    highlights: [
+      "Sri Venkateswara Temple",
+      "Tirumala Hills",
+      "Silathoranam",
+    ],
   },
   {
     id: 11,
@@ -156,6 +161,16 @@ export const placesData = [
     details:
       "Thekkady is home to the Periyar National Park and Wildlife Sanctuary. The region is also famous for its spice plantations. Enjoy trekking, boating, and wildlife spotting in this beautiful mountain region.",
     highlights: ["Spice Plantations", "Wildlife", "Trekking", "Boat Rides"],
+  },
+  {
+    id: 13,
+    name: "Puducherry",
+    state: "Puducherry",
+    image: "🏖️",
+    description: "Charming coastal town with French colonial heritage",
+    details:
+      "Puducherry, also known as Pondicherry, is known for its beautiful beaches, French colonial architecture, and serene ashrams. Stroll through the French Quarter, relax on the Promenade Beach, and visit Auroville for a peaceful retreat.",
+    highlights: ["Promenade Beach", "Auroville", "French Quarter"],
   },
 ];
 
