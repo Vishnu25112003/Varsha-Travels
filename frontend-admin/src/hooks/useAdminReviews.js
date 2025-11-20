@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 
-const API_BASE_URL = "http://localhost:5000"; // backend for reviews
+const API_BASE_URL = "https://varsha-travels.onrender.com"; // backend for reviews
 
 // Same default reviews as frontend-user (for first load)
 

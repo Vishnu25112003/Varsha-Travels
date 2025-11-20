@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import VarshaLogo from '../data/Varsha_Logo.png'
 
-const API_BASE_URL = "http://localhost:5000"; // same backend as admin
+const API_BASE_URL = "https://varsha-travels.onrender.com"; // same backend as admin
 
 export default function Footer() {
   const [showQr, setShowQr] = useState(false)

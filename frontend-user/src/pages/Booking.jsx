@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { vehiclesData } from "../data/vehicles";
 import { placesData } from "../data/places";
 
-const API_BASE_URL = "http://localhost:5000"; // same backend as contact form
+const API_BASE_URL = "https://varsha-travels.onrender.com"; // same backend as contact form
 
 export default function Booking() {
   const [formData, setFormData] = useState({

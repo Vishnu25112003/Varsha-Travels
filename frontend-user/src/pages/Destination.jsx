@@ -9,7 +9,7 @@ import destHero1 from "../data/destination/destination_carousel-1.jpg";
 import destHero2 from "../data/destination/destination_carousel-2.jpg";
 import destHero3 from "../data/destination/destination_carousel-3.jpg";
 
-const API_BASE_URL = "http://localhost:5000"; // same backend as admin
+const API_BASE_URL = "https://varsha-travels.onrender.com"; // same backend as admin
 
 export default function Destination() {
   const navigate = useNavigate();

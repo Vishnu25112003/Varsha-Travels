@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNotification } from "../hooks/useNotificationPopup.jsx";
 
-const API_BASE_URL = "http://localhost:5000"; // backend used for OTP emails
+const API_BASE_URL = "https://varsha-travels.onrender.com"; // backend used for OTP emails
 
 function AdminLogin({ onLogin }) {
   const [email, setEmail] = useState("");

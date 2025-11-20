@@ -15,7 +15,7 @@ import galleryFleet2 from "../data/gallery/gallery_why_our_fleet-2.jpg";
 import galleryFleet3 from "../data/gallery/gallery_why_our_fleet-3.webp";
 import galleryFleet4 from "../data/gallery/gallery_why_our_fleet-4.jpg";
 
-const API_BASE_URL = "http://localhost:5000"; // same backend as admin
+const API_BASE_URL = "https://varsha-travels.onrender.com"; // same backend as admin
 
 export default function Gallery() {
   const [vehicles, setVehicles] = useState([]);

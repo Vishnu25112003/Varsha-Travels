@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const API_BASE_URL = "http://localhost:5000"; // same backend as admin
+const API_BASE_URL = "https://varsha-travels.onrender.com"; // same backend as admin
 
 export default function Contact() {
   const [formData, setFormData] = useState({
