@@ -16,7 +16,7 @@ import homeWhy1 from "../data/home/home_why_choose_us-1.jpg";
 import homeWhy2 from "../data/home/home_why_choose_us-2.jpg";
 import homeWhy3 from "../data/home/home_why_choose_us-3.jpg";
 
-const API_BASE_URL = "http://localhost:5000"; // same backend as admin/destination page
+const API_BASE_URL = "https://varsha-travels.onrender.com"; // same backend as admin/destination page
 
 export default function Home() {
   const { reviews } = useReviews();

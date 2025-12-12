@@ -4,7 +4,7 @@ import DestinationList from "./DestinationList.jsx";
 import { useNotification } from "../../hooks/useNotificationPopup.jsx";
 import ConfirmDialog from "../common/ConfirmDialog.jsx";
 
-const API_BASE_URL = "http://localhost:5000";
+const API_BASE_URL = "https://varsha-travels.onrender.com";
 
 function DestinationManager() {
   const [destinations, setDestinations] = useState([]);

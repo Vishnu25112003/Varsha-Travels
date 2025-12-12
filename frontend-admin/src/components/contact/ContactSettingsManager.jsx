@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import ContactSettingsForm from "./ContactSettingsForm.jsx";
 import { useNotification } from "../../hooks/useNotificationPopup.jsx";
 
-const API_BASE_URL = "http://localhost:5000"; // adjust for production
+const API_BASE_URL = "https://varsha-travels.onrender.com"; // adjust for production
 
 function ContactSettingsManager() {
   const [settings, setSettings] = useState(null);

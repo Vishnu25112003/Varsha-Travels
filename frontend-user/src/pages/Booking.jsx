@@ -3,7 +3,7 @@ import { vehiclesData } from "../data/vehicles";
 import { placesData } from "../data/places";
 import Notification from "../components/Notification";
 
-const API_BASE_URL = "http://localhost:5000"; // same backend as contact form
+const API_BASE_URL = "https://varsha-travels.onrender.com"; // same backend as contact form
 
 export default function Booking() {
   const [formData, setFormData] = useState({

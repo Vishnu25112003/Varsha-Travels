@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNotification } from "../hooks/useNotificationPopup.jsx";
 
-const API_BASE_URL = "http://localhost:5000";
+const API_BASE_URL = "https://varsha-travels.onrender.com";
 
 function AdminLogin({ onLogin }) {
   const [email, setEmail] = useState("");
