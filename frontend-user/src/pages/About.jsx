@@ -37,7 +37,7 @@ export default function About() {
         <div className="absolute inset-0 flex items-center justify-center px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl text-center md:text-left md:ml-8 lg:ml-16 text-white drop-shadow-md">
             <p className="text-xs sm:text-sm uppercase tracking-[0.25em] text-sky-200 mb-3">
-              About Varsha Travels
+              About <span className="varsha-travels-font">Varsha Travels</span>
             </p>
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-3">
               Safe, Comfortable Journeys
@@ -58,7 +58,7 @@ export default function About() {
           <h2 className="text-4xl font-bold text-gray-900 mb-8">Our History</h2>
           <div className="space-y-6 text-gray-600 leading-relaxed">
             <p>
-              Varsha Travels was founded in 2008 with a simple vision: to make
+              <span className="varsha-travels-font">Varsha Travels</span> was founded in 2008 with a simple vision: to make
               travel across South India accessible, comfortable, and
               unforgettable for everyone. What started as a small operation with
               just 5 vehicles has grown into a trusted brand serving thousands

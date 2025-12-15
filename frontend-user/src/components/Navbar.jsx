@@ -97,7 +97,7 @@ export default function Navbar() {
                 alt="Varsha Travels Logo"
                 className="h-16 w-auto sm:h-20 md:h-24 object-contain"
               />
-              <span className="text-gray-900 font-bold text-xl pl-10 sm:text-2xl md:text-4xl whitespace-nowrap">
+              <span className="text-gray-900 varsha-travels-font font-bold text-xl pl-10 sm:text-2xl md:text-4xl whitespace-nowrap">
                 Varsha Travels
               </span>
             </Link>

@@ -88,7 +88,7 @@ export default function Reviews() {
             Traveller Reviews
           </h1>
           <p className="text-gray-600 mb-8 max-w-2xl">
-            Read what our guests say about travelling with Varsha Travels.
+            Read what our guests say about travelling with <span className="varsha-travels-font">Varsha Travels</span>.
           </p>
 
           {reviews.length === 0 ? (

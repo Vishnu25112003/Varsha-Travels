@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Notification from "../components/Notification";
+import VarshaLogo from "../data/Varsha_Logo.png";
 
 const API_BASE_URL = "https://varsha-travels.onrender.com"; // same backend as admin
 
@@ -112,6 +113,25 @@ export default function Contact() {
           <p className="text-gray-600 text-lg">
             Get in touch with our travel experts
           </p>
+        </div>
+      </section>
+
+      {/* Logo with Name Section */}
+      <section className="py-12 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col items-center text-center mb-8">
+            <img
+              src={VarshaLogo}
+              alt="Varsha Travels Logo"
+              className="h-20 w-auto sm:h-24 md:h-28 object-contain mb-4"
+            />
+            <h2 className="text-2xl sm:text-3xl md:text-4xl varsha-travels-font text-gray-900 mb-2">
+              Varsha Travels
+            </h2>
+            <p className="text-gray-600 text-lg max-w-2xl">
+              Your trusted partner for memorable journeys across South India
+            </p>
+          </div>
         </div>
       </section>
 
@@ -228,7 +248,7 @@ export default function Contact() {
                       Address
                     </h3>
                     <p className="text-gray-600 break-words">
-                      {settings?.businessName || "Varsha Travels"}
+                      {settings?.businessName || <span className="varsha-travels-font">Varsha Travels</span>}
                       <br />
                       {settings?.addressLine1}
                       {settings?.addressLine1 && <br />}

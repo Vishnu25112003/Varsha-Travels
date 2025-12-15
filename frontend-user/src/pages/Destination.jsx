@@ -37,14 +37,80 @@ export default function Destination() {
 
   const carouselImages = [destHero1, destHero2, destHero3];
 
-  const states = [
-    "all",
-    ...Array.from(new Set(destinations.map((d) => d.state))).filter(Boolean),
+  // Define the preferred order of states
+  const stateOrder = [
+    "Tamil Nadu",
+    "Kerala", 
+    "Puducherry",
+    "Karnataka",
+    "Andhra Pradesh"
   ];
+
+  // Get unique states from destinations
+  const availableStates = Array.from(new Set(destinations.map((d) => d.state))).filter(Boolean);
+  
+  // Function to get the priority index for a state
+  const getStatePriority = (stateName) => {
+    const state = stateName.toLowerCase().trim();
+    
+    // Check for Tamil Nadu variations
+    if (state.includes('tamil') || state === 'tn' || state === 'tamilnadu') {
+      return 0;
+    }
+    // Check for Kerala variations
+    if (state.includes('kerala') || state === 'kl') {
+      return 1;
+    }
+    // Check for Puducherry variations
+    if (state.includes('puducherry') || state.includes('pondicherry') || state === 'py') {
+      return 2;
+    }
+    // Check for Karnataka variations
+    if (state.includes('karnataka') || state === 'ka') {
+      return 3;
+    }
+    // Check for Andhra Pradesh variations
+    if (state.includes('andhra') || state === 'ap') {
+      return 4;
+    }
+    
+    // If no match found, return high number to put at end
+    return 999;
+  };
+
+  // Sort states according to preferred order
+  const sortedStates = availableStates.sort((a, b) => {
+    const priorityA = getStatePriority(a);
+    const priorityB = getStatePriority(b);
+    
+    if (priorityA !== priorityB) {
+      return priorityA - priorityB;
+    }
+    
+    // If same priority, sort alphabetically
+    return a.localeCompare(b);
+  });
+
+  const states = ["all", ...sortedStates];
+
+  // Sort destinations by state order when showing all
+  const sortDestinationsByState = (destinations) => {
+    return destinations.sort((a, b) => {
+      const priorityA = getStatePriority(a.state);
+      const priorityB = getStatePriority(b.state);
+      
+      if (priorityA !== priorityB) {
+        return priorityA - priorityB;
+      }
+      
+      // If same priority, sort by state name alphabetically
+      return a.state.localeCompare(b.state);
+    });
+  };
 
   const places =
     selectedState === "all"
-      ? destinations
+      ? sortDestinationsByState([...destinations])
       : destinations.filter((d) => d.state === selectedState);
 
   return (

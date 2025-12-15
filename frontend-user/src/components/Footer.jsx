@@ -33,18 +33,19 @@ export default function Footer() {
         <div className="hidden md:grid md:grid-cols-4 gap-8 mb-10 md:mb-12">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-3 mb-3 md:mb-4">
+            <div className="flex flex-col items-center text-center mb-4 md:mb-5">
               <img
                 src={VarshaLogo}
                 alt="Varsha Travels Logo"
-                className="h-10 w-auto sm:h-12 object-contain"
+                className="h-20 w-auto sm:h-24 md:h-28 lg:h-32 object-contain mb-3"
               />
-              <div className="flex flex-col">
-                <span className="text-white font-bold text-base sm:text-lg leading-tight">VARSHA</span>
-                <span className="text-blue-400 font-semibold text-xs tracking-wide">TRAVELS</span>
-              </div>
+              <span className="text-white varsha-travels-font text-xl sm:text-2xl md:text-3xl leading-tight">
+                Varsha Travels
+              </span>
             </div>
-            <p className="text-gray-300 text-xs sm:text-sm">Explore Tamil Nadu with trusted, reliable, and premium travel services.</p>
+            <p className="text-gray-300 text-sm sm:text-base leading-relaxed text-center">
+              Explore Tamil Nadu with trusted, reliable, and premium travel services.
+            </p>
           </div>
 
           {/* Quick Links */}
@@ -116,7 +117,7 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
             <div className="space-y-1 max-w-md text-center md:text-left">
               <p className="text-gray-400 text-xs sm:text-sm">
-                © 2024 Varsha Travels. All rights reserved.
+                © 2025 <span className="varsha-travels-font">Varsha Travels</span>. All rights reserved.
               </p>
               <p className="text-gray-500 text-[10px] sm:text-xs leading-relaxed">
                 By using this website and booking our services, you agree to our basic terms.
@@ -228,19 +229,20 @@ function MobileFooter() {
   return (
     <div className="md:hidden mb-8">
       {/* Brand */}
-      <div className="mb-4">
-        <div className="flex items-center gap-3 mb-2">
+      <div className="mb-6">
+        <div className="flex flex-col items-center text-center mb-3">
           <img
             src={VarshaLogo}
             alt="Varsha Travels Logo"
-            className="h-10 w-auto object-contain"
+            className="h-18 w-auto sm:h-20 md:h-24 object-contain mb-2"
           />
-          <div className="flex flex-col">
-            <span className="text-white font-bold text-base leading-tight">VARSHA</span>
-            <span className="text-blue-400 font-semibold text-xs tracking-wide">TRAVELS</span>
-          </div>
+          <span className="text-white varsha-travels-font text-lg sm:text-xl leading-tight">
+            Varsha Travels
+          </span>
         </div>
-        <p className="text-gray-300 text-xs">Explore Tamil Nadu with trusted, reliable, and premium travel services.</p>
+        <p className="text-gray-300 text-sm leading-relaxed text-center">
+          Explore Tamil Nadu with trusted, reliable, and premium travel services.
+        </p>
       </div>
 
       {/* Accordion: Quick Links */}
