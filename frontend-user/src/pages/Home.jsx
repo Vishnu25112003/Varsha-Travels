@@ -85,11 +85,53 @@ export default function Home() {
     </div>
   ));
 
-  // Use the same destination data as Destination page (from backend)
-  // Only show up to 8 destinations that have an image available
-  const topPlaces = (destinations || [])
-    .filter((d) => d.imageUrl || placeImages[d.name])
-    .slice(0, 8);
+  // Create a mixed selection of destinations from different states
+  const createMixedSelection = (destinations) => {
+    // Filter destinations that have images
+    const availableDestinations = destinations.filter((d) => d.imageUrl || placeImages[d.name]);
+    
+    if (availableDestinations.length === 0) return [];
+    
+    // Group destinations by state
+    const destinationsByState = {};
+    availableDestinations.forEach(dest => {
+      const state = dest.state || 'Other';
+      if (!destinationsByState[state]) {
+        destinationsByState[state] = [];
+      }
+      destinationsByState[state].push(dest);
+    });
+    
+    // Create mixed selection - try to get variety from different states
+    const mixedSelection = [];
+    const stateKeys = Object.keys(destinationsByState);
+    let currentStateIndex = 0;
+    
+    // Keep adding destinations until we have 8 or run out
+    while (mixedSelection.length < 8 && mixedSelection.length < availableDestinations.length) {
+      const currentState = stateKeys[currentStateIndex % stateKeys.length];
+      const stateDestinations = destinationsByState[currentState];
+      
+      // Find a destination from this state that we haven't added yet
+      const unusedDestination = stateDestinations.find(dest => 
+        !mixedSelection.some(selected => selected._id === dest._id || selected.name === dest.name)
+      );
+      
+      if (unusedDestination) {
+        mixedSelection.push(unusedDestination);
+      }
+      
+      currentStateIndex++;
+      
+      // Safety check to prevent infinite loop
+      if (currentStateIndex > stateKeys.length * 10) break;
+    }
+    
+    return mixedSelection;
+  };
+
+  // Use mixed selection for homepage to show variety
+  const topPlaces = createMixedSelection(destinations || []);
 
   return (
     <div className="min-h-screen bg-white pt-20 sm:pt-24 md:pt-28">

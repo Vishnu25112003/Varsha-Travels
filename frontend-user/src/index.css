@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -55,13 +56,18 @@ html {
   hyphens: auto;
 }
 
-/* Custom Varsha Travels brand font styling - Comic Neue for logo text */
+/* Custom Varsha Travels brand font styling - Bubblegum Sans for travel website */
 .varsha-travels-font {
-  font-family: 'Comic Neue', cursive;
-  font-weight: 700;
+  font-family: 'Bubblegum Sans', cursive;
+  font-weight: 400;
   font-style: normal;
   letter-spacing: 0.02em;
   text-transform: none;
+}
+
+/* Custom teal blue color for Varsha Travels branding */
+.varsha-travels-color {
+  color: #01889F;
 }
 
 /* Notification animations */

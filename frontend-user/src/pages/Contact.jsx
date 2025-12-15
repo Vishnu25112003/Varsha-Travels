@@ -106,32 +106,23 @@ export default function Contact() {
         />
       )}
 
-      {/* Header */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-gray-50">
+      {/* Header - Centered Layout */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-blue-400 to-blue-700">
         <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">Contact Us</h1>
-          <p className="text-gray-600 text-lg">
+          <img
+            src={VarshaLogo}
+            alt="Varsha Travels Logo"
+            className="h-20 w-auto sm:h-24 md:h-28 object-contain mb-4 mx-auto"
+          />
+          <h2 className="text-2xl sm:text-3xl md:text-4xl varsha-travels-font text-white mb-6">
+            Varsha Travels
+          </h2>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+            Contact Us
+          </h1>
+          <p className="text-blue-100 text-lg">
             Get in touch with our travel experts
           </p>
-        </div>
-      </section>
-
-      {/* Logo with Name Section */}
-      <section className="py-12 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col items-center text-center mb-8">
-            <img
-              src={VarshaLogo}
-              alt="Varsha Travels Logo"
-              className="h-20 w-auto sm:h-24 md:h-28 object-contain mb-4"
-            />
-            <h2 className="text-2xl sm:text-3xl md:text-4xl varsha-travels-font text-gray-900 mb-2">
-              Varsha Travels
-            </h2>
-            <p className="text-gray-600 text-lg max-w-2xl">
-              Your trusted partner for memorable journeys across South India
-            </p>
-          </div>
         </div>
       </section>
 
