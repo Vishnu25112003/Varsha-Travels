@@ -86,7 +86,7 @@ export default function Navbar() {
       {/* Main navbar */}
       <div className="bg-white/30 backdrop-blur-2xl border-b border-white/20 shadow-md supports-[backdrop-filter]:bg-white/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-20 sm:h-24 md:h-28">
+          <div className="flex items-center justify-between h-24 sm:h-28 md:h-30 lg:h-32">
             {/* Left - Logo with Company Name */}
             <Link
               to="/"
@@ -95,49 +95,69 @@ export default function Navbar() {
               <img
                 src={VarshaLogo}
                 alt="Varsha Travels Logo"
-                className="h-16 w-auto sm:h-20 md:h-24 object-contain"
+                className="h-20 w-auto sm:h-22 md:h-24 lg:h-26 object-contain"
               />
-              <span className="varsha-travels-color varsha-travels-font font-bold text-xl pl-10 sm:text-2xl md:text-4xl whitespace-nowrap">
+              <span className="varsha-travels-color varsha-travels-font font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl whitespace-nowrap">
                 Varsha Travels
               </span>
             </Link>
 
             {/* Right - Navigation Links and Book Now */}
-            <div className="hidden lg:flex items-center gap-8 xl:gap-10 ml-auto">
+            <div className="hidden lg:flex items-center gap-4 xl:gap-6 ml-auto">
               <Link
                 to="/"
-                className={`transition font-semibold ${isActive("/") ? "text-blue-700" : "text-gray-700 hover:text-blue-700"}`}
+                className={`px-2 py-1 text-sm xl:text-base font-semibold transition-all duration-300 ${
+                  isActive("/") 
+                    ? "text-blue-700 border-b-2 border-blue-700" 
+                    : "text-gray-700 hover:text-blue-700"
+                }`}
               >
                 Home
               </Link>
               <Link
                 to="/about"
-                className={`transition font-semibold ${isActive("/about") ? "text-blue-700" : "text-gray-700 hover:text-blue-700"}`}
+                className={`px-2 py-1 text-sm xl:text-base font-semibold transition-all duration-300 ${
+                  isActive("/about") 
+                    ? "text-blue-700 border-b-2 border-blue-700" 
+                    : "text-gray-700 hover:text-blue-700"
+                }`}
               >
                 About
               </Link>
               <Link
                 to="/destination"
-                className={`transition font-semibold ${isActive("/destination") ? "text-blue-700" : "text-gray-700 hover:text-blue-700"}`}
+                className={`px-2 py-1 text-sm xl:text-base font-semibold transition-all duration-300 ${
+                  isActive("/destination") 
+                    ? "text-blue-700 border-b-2 border-blue-700" 
+                    : "text-gray-700 hover:text-blue-700"
+                }`}
               >
-                Destination
+                Destinations
               </Link>
               <Link
                 to="/gallery"
-                className={`transition font-semibold ${isActive("/gallery") ? "text-blue-700" : "text-gray-700 hover:text-blue-700"}`}
+                className={`px-2 py-1 text-sm xl:text-base font-semibold transition-all duration-300 ${
+                  isActive("/gallery") 
+                    ? "text-blue-700 border-b-2 border-blue-700" 
+                    : "text-gray-700 hover:text-blue-700"
+                }`}
               >
                 Gallery
               </Link>
               <Link
                 to="/contact"
-                className={`transition font-semibold ${isActive("/contact") ? "text-blue-700" : "text-gray-700 hover:text-blue-700"}`}
+                className={`px-2 py-1 text-sm xl:text-base font-semibold transition-all duration-300 ${
+                  isActive("/contact") 
+                    ? "text-blue-700 border-b-2 border-blue-700" 
+                    : "text-gray-700 hover:text-blue-700"
+                }`}
               >
                 Contact
               </Link>
 
               <Link
                 to="/booking"
-                className="px-6 py-2 bg-gradient-to-r from-blue-600 to-indigo-500 text-white font-bold rounded-full hover:shadow-lg hover:shadow-blue-600/50 transition transform hover:scale-105"
+                className="ml-3 px-5 py-2 bg-gradient-to-r from-blue-600 to-indigo-500 text-white font-bold text-sm xl:text-base rounded-full hover:shadow-lg hover:shadow-blue-600/50 transition-all duration-300 transform hover:scale-105"
               >
                 Book Now
               </Link>

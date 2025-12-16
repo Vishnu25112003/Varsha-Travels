@@ -140,7 +140,7 @@ export default function Home() {
         <div className="w-full">
           {/* On mobile/tablet: tall banner; on desktop: full screen under navbar */}
           <div className="h-[60vh] sm:h-[70vh] md:h-[80vh] lg:h-[calc(100vh-7rem)]">
-            <Carousel slides={heroSlidesJSX} autoPlay={true} interval={4500} />
+            <Carousel slides={heroSlidesJSX} autoPlay={true} interval={4500} showArrows={true} />
           </div>
         </div>
       </section>
@@ -280,16 +280,17 @@ export default function Home() {
           {reviews && reviews.length > 0 ? (
             <div className="w-full h-[260px] sm:h-[240px] md:h-[220px] lg:h-[260px]">
               <Carousel
-                autoPlay
-                interval={6000}
-                slides={reviews.map((review) => (
+                  autoPlay
+                  interval={6000}
+                  showArrows={false}
+                  slides={reviews.map((review) => (
                   <div
                     key={review.id}
                     className="relative w-full h-full flex items-center justify-center"
                   >
-                    <div className="max-w-3xl w-full mx-auto bg-gradient-to-br from-white to-slate-50 border border-blue-600/15 rounded-3xl shadow-sm px-5 sm:px-8 py-6 sm:py-8 flex flex-col md:flex-row gap-4 md:gap-6">
+                    <div className="max-w-3xl w-full mx-auto bg-gradient-to-br from-white to-slate-50 border border-blue-600/15 rounded-3xl shadow-sm px-4 sm:px-6 md:px-8 py-4 sm:py-6 md:py-8 flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6">
                       {review.mediaUrl && (
-                        <div className="hidden sm:block w-40 h-32 rounded-2xl overflow-hidden bg-gray-100 shrink-0 flex items-center justify-center">
+                        <div className="w-full h-24 sm:w-32 sm:h-24 md:w-40 md:h-32 rounded-xl overflow-hidden bg-gray-100 shrink-0 flex items-center justify-center">
                           {review.mediaType === "video" ? (
                             <video
                               src={review.mediaUrl}

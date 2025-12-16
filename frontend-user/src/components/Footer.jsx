@@ -116,10 +116,10 @@ export default function Footer() {
         <div className="border-t border-white/10 pt-6 md:pt-8">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
             <div className="space-y-1 max-w-md text-center md:text-left">
-              <p className="text-gray-400 text-xs sm:text-sm">
+              <p className="text-white text-xs sm:text-sm">
                 © 2025 <span className="varsha-travels-font">Varsha Travels</span>. All rights reserved.
               </p>
-              <p className="text-gray-500 text-[10px] sm:text-xs leading-relaxed">
+              <p className="text-gray-800 text-[10px] sm:text-xs leading-relaxed">
                 By using this website and booking our services, you agree to our basic terms.
                 <button
                   type="button"
