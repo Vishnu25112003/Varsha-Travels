@@ -278,7 +278,7 @@ export default function Home() {
           </div>
 
           {reviews && reviews.length > 0 ? (
-            <div className="w-full h-[260px] sm:h-[240px] md:h-[220px] lg:h-[260px]">
+            <div className="w-full h-[300px] sm:h-[280px] md:h-[260px] lg:h-[300px] pb-8">
               <Carousel
                   autoPlay
                   interval={6000}

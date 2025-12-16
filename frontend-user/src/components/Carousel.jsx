@@ -107,7 +107,9 @@ export default function Carousel({ slides, autoPlay = true, interval = 5000, sho
       )}
 
       {/* Modern Progress Indicators */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-3">
+      <div className={`absolute left-1/2 -translate-x-1/2 z-20 flex gap-3 ${
+        showArrows ? 'bottom-8' : '-bottom-6'
+      }`}>
         {slides.map((_, idx) => (
           <button
             key={idx}
@@ -117,8 +119,12 @@ export default function Carousel({ slides, autoPlay = true, interval = 5000, sho
           >
             <div className={`h-2 rounded-full transition-all duration-500 ${
               idx === currentSlide 
-                ? 'bg-white w-12 shadow-lg shadow-white/50' 
-                : 'bg-white/40 w-2 group-hover/dot:bg-white/70 group-hover/dot:w-8'
+                ? showArrows 
+                  ? 'bg-gray-600 w-12 shadow-lg shadow-gray-600/50'
+                  : 'bg-blue-600 w-12 shadow-lg shadow-blue-600/50'
+                : showArrows
+                  ? 'bg-gray-400 w-2 group-hover/dot:bg-gray-600 group-hover/dot:w-8'
+                  : 'bg-gray-400 w-2 group-hover/dot:bg-blue-600/70 group-hover/dot:w-8'
             }`} />
           </button>
         ))}
