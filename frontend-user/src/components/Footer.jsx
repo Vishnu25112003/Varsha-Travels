@@ -25,7 +25,7 @@ export default function Footer() {
     fetchSettings()
   }, [])
   return (
-    <footer className="bg-gradient-to-b from-gray-900 to-black text-white border-t border-white/10">
+    <footer className="bg-blue-600 text-white border-t border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
         {/* Mobile: collapsible sections */}
         <MobileFooter />
