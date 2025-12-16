@@ -290,7 +290,7 @@ export default function Home() {
                   >
                     <div className="max-w-3xl w-full mx-auto bg-gradient-to-br from-white to-slate-50 border border-blue-600/15 rounded-3xl shadow-sm px-4 sm:px-6 md:px-8 py-4 sm:py-6 md:py-8 flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6">
                       {review.mediaUrl && (
-                        <div className="w-full h-24 sm:w-32 sm:h-24 md:w-40 md:h-32 rounded-xl overflow-hidden bg-gray-100 shrink-0 flex items-center justify-center">
+                        <div className="w-full h-32 sm:w-36 sm:h-28 md:w-40 md:h-32 rounded-xl overflow-hidden bg-gray-100 shrink-0 flex items-center justify-center">
                           {review.mediaType === "video" ? (
                             <video
                               src={review.mediaUrl}
