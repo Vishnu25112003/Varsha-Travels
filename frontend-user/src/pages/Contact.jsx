@@ -124,11 +124,8 @@ export default function Contact() {
           <img
             src={VarshaLogo}
             alt="Varsha Travels Logo"
-            className="h-24 w-auto sm:h-28 md:h-32 lg:h-36 xl:h-40 object-contain mb-4 mx-auto"
+            className="h-32 w-auto sm:h-40 md:h-48 lg:h-56 xl:h-64 object-contain mb-6 mx-auto"
           />
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl varsha-travels-font varsha-travels-color mb-6">
-            Varsha Travels
-          </h2>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
             Your trusted partner for memorable journeys across South India
           </p>

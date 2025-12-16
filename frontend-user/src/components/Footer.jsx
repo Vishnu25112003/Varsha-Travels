@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import VarshaLogo from '../data/Varsha_Logo.png'
 
 const API_BASE_URL = "https://varsha-travels.onrender.com"; // same backend as admin
 
@@ -25,7 +24,7 @@ export default function Footer() {
     fetchSettings()
   }, [])
   return (
-    <footer className="bg-blue-600 text-white border-t border-white/10">
+    <footer className="bg-gray-900 text-white border-t border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
         {/* Mobile: collapsible sections */}
         <MobileFooter />
@@ -34,14 +33,11 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="flex flex-col items-center text-center mb-4 md:mb-5">
-              <img
-                src={VarshaLogo}
-                alt="Varsha Travels Logo"
-                className="h-20 w-auto sm:h-24 md:h-28 lg:h-32 object-contain mb-3"
-              />
-              <span className="text-white varsha-travels-font text-xl sm:text-2xl md:text-3xl leading-tight">
-                Varsha Travels
-              </span>
+              <div className="circular-text-container">
+                <h2 className="text-white varsha-travels-font text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold cursor-pointer transition-all duration-300 hover:scale-105 relative z-10">
+                  Varsha Travels
+                </h2>
+              </div>
             </div>
             <p className="text-gray-300 text-sm sm:text-base leading-relaxed text-center">
               Explore Tamil Nadu with trusted, reliable, and premium travel services.
@@ -231,14 +227,11 @@ function MobileFooter() {
       {/* Brand */}
       <div className="mb-6">
         <div className="flex flex-col items-center text-center mb-3">
-          <img
-            src={VarshaLogo}
-            alt="Varsha Travels Logo"
-            className="h-18 w-auto sm:h-20 md:h-24 object-contain mb-2"
-          />
-          <span className="text-white varsha-travels-font text-lg sm:text-xl leading-tight">
-            Varsha Travels
-          </span>
+          <div className="circular-text-container">
+            <h2 className="text-white varsha-travels-font text-2xl sm:text-3xl md:text-4xl font-bold cursor-pointer transition-all duration-300 hover:scale-105 relative z-10">
+              Varsha Travels
+            </h2>
+          </div>
         </div>
         <p className="text-gray-300 text-sm leading-relaxed text-center">
           Explore Tamil Nadu with trusted, reliable, and premium travel services.

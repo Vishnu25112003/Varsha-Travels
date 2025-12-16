@@ -32,12 +32,17 @@ function App() {
     fetchContactSettings();
   }, []);
 
-  // Get primary phone number for call/WhatsApp
-  const primaryPhone = contactSettings?.phones?.[0] || "+918778265650";
-  const whatsappNumber = primaryPhone.replace(/[^0-9+]/g, "");
+  // Get phone numbers for call/WhatsApp
+  const phoneNumbers = contactSettings?.phones || ["+918778265650"];
+  const primaryPhone = phoneNumbers[0];
   const whatsappMessage = encodeURIComponent(
     "Hi Varsha Travels! I would like to enquire about your travel services."
   );
+
+  // Format phone number for WhatsApp (remove spaces, dashes, keep only numbers and +)
+  const formatWhatsAppNumber = (phone) => {
+    return phone.replace(/[^0-9+]/g, "");
+  };
 
   return (
     <Router>
@@ -90,7 +95,7 @@ function App() {
 
         {/* WhatsApp Button - Bottom Right Corner */}
         <a
-          href={`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`}
+          href={`https://wa.me/${formatWhatsAppNumber(primaryPhone)}?text=${whatsappMessage}`}
           target="_blank"
           rel="noopener noreferrer"
           className="fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-40 group"
