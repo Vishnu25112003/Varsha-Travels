@@ -1,28 +1,29 @@
-import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { Button } from "./ui/moving-border";
 
 const API_BASE_URL = "https://varsha-travels.onrender.com"; // same backend as admin
 
 export default function Footer() {
-  const [showQr, setShowQr] = useState(false)
-  const [settings, setSettings] = useState(null)
-  const [showTerms, setShowTerms] = useState(false)
+  const [showQr, setShowQr] = useState(false);
+  const [settings, setSettings] = useState(null);
+  const [showTerms, setShowTerms] = useState(false);
 
   useEffect(() => {
     const fetchSettings = async () => {
       try {
-        const res = await fetch(`${API_BASE_URL}/api/contact-settings`)
-        if (!res.ok) throw new Error('Failed to load contact settings')
-        const data = await res.json()
-        setSettings(data)
+        const res = await fetch(`${API_BASE_URL}/api/contact-settings`);
+        if (!res.ok) throw new Error("Failed to load contact settings");
+        const data = await res.json();
+        setSettings(data);
       } catch (error) {
-        console.error('Failed to fetch contact settings', error)
-        setSettings(null)
+        console.error("Failed to fetch contact settings", error);
+        setSettings(null);
       }
-    }
+    };
 
-    fetchSettings()
-  }, [])
+    fetchSettings();
+  }, []);
   return (
     <footer className="bg-gray-900 text-white border-t border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
@@ -33,37 +34,70 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="flex flex-col items-center text-center mb-4 md:mb-5">
-              <div className="circular-text-container">
-                <h2 className="text-white varsha-travels-font text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold cursor-pointer transition-all duration-300 hover:scale-105 relative z-10">
+              <Button
+                as="div"
+                borderRadius="0.75rem" // for a rectangular look
+                containerClassName="w-56 h-28"
+                className="bg-gray-900 text-white"
+              >
+                <h2 className="text-white varsha-travels-font text-xl sm:text-3xl font-bold">
                   Varsha Travels
                 </h2>
-              </div>
+              </Button>
             </div>
-            <p className="text-gray-300 text-sm sm:text-base leading-relaxed text-center">
-              Explore Tamil Nadu with trusted, reliable, and premium travel services.
+            <p className="text-gray-300 text-sm sm:text-base leading-relaxed text-center mt-4">
+              Explore Tamil Nadu with trusted, reliable, and premium travel
+              services.
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-white font-bold text-base sm:text-lg mb-3 md:mb-4">Quick Links</h4>
+            <h4 className="text-white font-bold text-base sm:text-lg mb-3 md:mb-4">
+              Quick Links
+            </h4>
             <ul className="grid grid-cols-2 gap-x-4 gap-y-2 sm:block sm:space-y-2 text-xs sm:text-sm text-gray-300">
-              <li><Link to="/" className="hover:text-blue-400 transition">Home</Link></li>
-              <li><Link to="/about" className="hover:text-blue-400 transition">About</Link></li>
-              <li><Link to="/destination" className="hover:text-blue-400 transition">Destination</Link></li>
-              <li><Link to="/gallery" className="hover:text-blue-400 transition">Gallery</Link></li>
+              <li>
+                <Link to="/" className="hover:text-blue-400 transition">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link to="/about" className="hover:text-blue-400 transition">
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/destination"
+                  className="hover:text-blue-400 transition"
+                >
+                  Destination
+                </Link>
+              </li>
+              <li>
+                <Link to="/gallery" className="hover:text-blue-400 transition">
+                  Gallery
+                </Link>
+              </li>
             </ul>
           </div>
 
           {/* Account Details */}
           <div>
-            <h4 className="text-white font-bold text-base sm:text-lg mb-3 md:mb-4">Account Details</h4>
+            <h4 className="text-white font-bold text-base sm:text-lg mb-3 md:mb-4">
+              Account Details
+            </h4>
             <ul className="space-y-2 text-xs sm:text-sm text-gray-300">
               {settings?.bankName && <li>Bank: {settings.bankName}</li>}
-              {settings?.accountNumber && <li>Account No: {settings.accountNumber}</li>}
+              {settings?.accountNumber && (
+                <li>Account No: {settings.accountNumber}</li>
+              )}
               {settings?.ifsc && <li>IFSC: {settings.ifsc}</li>}
               {settings?.branch && <li>Branch: {settings.branch}</li>}
-              {settings?.accountHolderName && <li>Account Name: {settings.accountHolderName}</li>}
+              {settings?.accountHolderName && (
+                <li>Account Name: {settings.accountHolderName}</li>
+              )}
               {!settings && (
                 <li>Account details will appear here once configured.</li>
               )}
@@ -73,7 +107,7 @@ export default function Footer() {
               onClick={() => setShowQr((prev) => !prev)}
               className="mt-3 inline-flex items-center px-3 py-1.5 rounded-full bg-white/10 hover:bg-white/20 text-xs sm:text-sm text-white transition"
             >
-              {showQr ? 'Hide QR Code' : 'Show QR Code'}
+              {showQr ? "Hide QR Code" : "Show QR Code"}
             </button>
             {showQr && settings?.qrImageUrl && (
               <div className="mt-3">
@@ -83,7 +117,9 @@ export default function Footer() {
                   className="w-32 h-32 object-contain rounded-md border border-white/10 bg-white"
                 />
                 {settings?.upiId && (
-                  <p className="text-xs text-gray-400 mt-1">UPI ID: {settings.upiId}</p>
+                  <p className="text-xs text-gray-400 mt-1">
+                    UPI ID: {settings.upiId}
+                  </p>
                 )}
               </div>
             )}
@@ -91,19 +127,17 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="text-white font-bold text-base sm:text-lg mb-3 md:mb-4">Contact</h4>
+            <h4 className="text-white font-bold text-base sm:text-lg mb-3 md:mb-4">
+              Contact
+            </h4>
             <ul className="space-y-2 text-xs sm:text-sm text-gray-300">
               <li>
                 📍 {settings?.addressLine1}
                 {settings?.addressLine2 && `, ${settings.addressLine2}`}
                 {settings?.addressLine3 && `, ${settings.addressLine3}`}
               </li>
-              <li>
-                📞 {(settings?.phones || []).join(' / ')}
-              </li>
-              <li>
-                ✉️ {(settings?.emails || []).join(' / ')}
-              </li>
+              <li>📞 {(settings?.phones || []).join(" / ")}</li>
+              <li>✉️ {(settings?.emails || []).join(" / ")}</li>
               <li>🕐 24/7 Support</li>
             </ul>
           </div>
@@ -113,14 +147,17 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
             <div className="space-y-1 max-w-md text-center md:text-left">
               <p className="text-white text-xs sm:text-sm">
-                © 2025 <span className="varsha-travels-font">Varsha Travels</span>. All rights reserved.
+                © 2025{" "}
+                <span className="varsha-travels-font">Varsha Travels</span>. All
+                rights reserved.
               </p>
-              <p className="text-gray-800 text-[10px] sm:text-xs leading-relaxed">
-                By using this website and booking our services, you agree to our basic terms.
+              <p className="text-white text-[10px] sm:text-xs leading-relaxed">
+                By using this website and booking our services, you agree to our
+                basic terms.
                 <button
                   type="button"
                   onClick={() => setShowTerms(true)}
-                  className="ml-1 underline underline-offset-2 text-blue-300 hover:text-blue-100"
+                  className="ml-1 pt-2 underline underline-offset-2 text-blue-300 hover:text-blue-100"
                 >
                   Terms &amp; Conditions
                 </button>
@@ -173,104 +210,176 @@ export default function Footer() {
             </h3>
             <div className="space-y-2 text-xs sm:text-sm text-gray-700 max-h-72 overflow-y-auto">
               <p>
-                1. Itineraries and timings may change due to traffic, weather or local
-                conditions. Our team will do their best to inform you of any changes.
+                1. Itineraries and timings may change due to traffic, weather or
+                local conditions. Our team will do their best to inform you of
+                any changes.
               </p>
               <p>
-                2. Package prices generally include vehicle, driver and basic charges only.
-                Entry tickets, tolls, parking, food, and personal expenses are extra unless
-                clearly mentioned in writing.
+                2. Package prices generally include vehicle, driver and basic
+                charges only. Entry tickets, tolls, parking, food, and personal
+                expenses are extra unless clearly mentioned in writing.
               </p>
               <p>
-                3. A booking is confirmed only after advance payment. Cancellations or date
-                changes may attract charges as per our current policy shared at the time of
-                booking.
+                3. A booking is confirmed only after advance payment.
+                Cancellations or date changes may attract charges as per our
+                current policy shared at the time of booking.
               </p>
               <p>
-                4. Passengers are responsible for their personal belongings during the trip.
+                4. Passengers are responsible for their personal belongings
+                during the trip.
               </p>
               <p>
-                5. By confirming a trip with Varsha Travels, you agree to these terms and any
-                additional terms communicated for special packages.
+                5. By confirming a trip with Varsha Travels, you agree to these
+                terms and any additional terms communicated for special
+                packages.
               </p>
             </div>
           </div>
         </div>
       )}
     </footer>
-  )
+  );
 }
 
 function MobileFooter() {
-  const [open, setOpen] = useState({ links: false, services: false, contact: false })
-  const [showQr, setShowQr] = useState(false)
-  const [settings, setSettings] = useState(null)
+  const [open, setOpen] = useState({
+    links: false,
+    services: false,
+    contact: false,
+  });
+  const [showQr, setShowQr] = useState(false);
+  const [settings, setSettings] = useState(null);
 
   useEffect(() => {
     const fetchSettings = async () => {
       try {
-        const res = await fetch(`${API_BASE_URL}/api/contact-settings`)
-        if (!res.ok) throw new Error('Failed to load contact settings')
-        const data = await res.json()
-        setSettings(data)
+        const res = await fetch(`${API_BASE_URL}/api/contact-settings`);
+        if (!res.ok) throw new Error("Failed to load contact settings");
+        const data = await res.json();
+        setSettings(data);
       } catch (error) {
-        console.error('Failed to fetch contact settings', error)
-        setSettings(null)
+        console.error("Failed to fetch contact settings", error);
+        setSettings(null);
       }
-    }
+    };
 
-    fetchSettings()
-  }, [])
-  const toggle = (key) => setOpen((prev) => ({ ...prev, [key]: !prev[key] }))
+    fetchSettings();
+  }, []);
+  const toggle = (key) => setOpen((prev) => ({ ...prev, [key]: !prev[key] }));
   return (
     <div className="md:hidden mb-8">
       {/* Brand */}
       <div className="mb-6">
         <div className="flex flex-col items-center text-center mb-3">
-          <div className="circular-text-container">
-            <h2 className="text-white varsha-travels-font text-2xl sm:text-3xl md:text-4xl font-bold cursor-pointer transition-all duration-300 hover:scale-105 relative z-10">
+          <Button
+            as="div"
+            borderRadius="0.75rem"
+            containerClassName="w-64 h-20"
+            className="bg-gray-900 text-white"
+          >
+            <h2 className="text-white varsha-travels-font text-3xl sm:text-4xl font-bold">
               Varsha Travels
             </h2>
-          </div>
+          </Button>
         </div>
-        <p className="text-gray-300 text-sm leading-relaxed text-center">
-          Explore Tamil Nadu with trusted, reliable, and premium travel services.
+        <p className="text-gray-300 text-sm leading-relaxed text-center mt-3">
+          Explore Tamil Nadu with trusted, reliable, and premium travel
+          services.
         </p>
       </div>
 
       {/* Accordion: Quick Links */}
       <div className="border border-white/10 rounded-xl overflow-hidden mb-3">
-        <button onClick={() => toggle('links')} aria-expanded={open.links} aria-controls="footer-links" className="w-full flex items-center justify-between px-4 py-3 bg-white/5">
+        <button
+          onClick={() => toggle("links")}
+          aria-expanded={open.links}
+          aria-controls="footer-links"
+          className="w-full flex items-center justify-between px-4 py-3 bg-white/5"
+        >
           <span className="font-semibold">Quick Links</span>
-          <svg className={`w-5 h-5 transition-transform ${open.links ? 'rotate-180' : ''}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+          <svg
+            className={`w-5 h-5 transition-transform ${open.links ? "rotate-180" : ""}`}
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M19 9l-7 7-7-7"
+            />
           </svg>
         </button>
-        <div id="footer-links" className={`${open.links ? 'block' : 'hidden'} px-4 pb-3 pt-2`}>
+        <div
+          id="footer-links"
+          className={`${open.links ? "block" : "hidden"} px-4 pb-3 pt-2`}
+        >
           <ul className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm text-gray-300">
-            <li><Link to="/" className="hover:text-blue-400 transition">Home</Link></li>
-            <li><Link to="/about" className="hover:text-blue-400 transition">About</Link></li>
-            <li><Link to="/destination" className="hover:text-blue-400 transition">Destination</Link></li>
-            <li><Link to="/gallery" className="hover:text-blue-400 transition">Gallery</Link></li>
+            <li>
+              <Link to="/" className="hover:text-blue-400 transition">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link to="/about" className="hover:text-blue-400 transition">
+                About
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/destination"
+                className="hover:text-blue-400 transition"
+              >
+                Destination
+              </Link>
+            </li>
+            <li>
+              <Link to="/gallery" className="hover:text-blue-400 transition">
+                Gallery
+              </Link>
+            </li>
           </ul>
         </div>
       </div>
 
       {/* Accordion: Account Details */}
       <div className="border border-white/10 rounded-xl overflow-hidden mb-3">
-        <button onClick={() => toggle('services')} aria-expanded={open.services} aria-controls="footer-services" className="w-full flex items-center justify-between px-4 py-3 bg-white/5">
+        <button
+          onClick={() => toggle("services")}
+          aria-expanded={open.services}
+          aria-controls="footer-services"
+          className="w-full flex items-center justify-between px-4 py-3 bg-white/5"
+        >
           <span className="font-semibold">Account Details</span>
-          <svg className={`w-5 h-5 transition-transform ${open.services ? 'rotate-180' : ''}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+          <svg
+            className={`w-5 h-5 transition-transform ${open.services ? "rotate-180" : ""}`}
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M19 9l-7 7-7-7"
+            />
           </svg>
         </button>
-        <div id="footer-services" className={`${open.services ? 'block' : 'hidden'} px-4 pb-3 pt-2`}>
+        <div
+          id="footer-services"
+          className={`${open.services ? "block" : "hidden"} px-4 pb-3 pt-2`}
+        >
           <ul className="space-y-2 text-sm text-gray-300">
             {settings?.bankName && <li>Bank: {settings.bankName}</li>}
-            {settings?.accountNumber && <li>Account No: {settings.accountNumber}</li>}
+            {settings?.accountNumber && (
+              <li>Account No: {settings.accountNumber}</li>
+            )}
             {settings?.ifsc && <li>IFSC: {settings.ifsc}</li>}
             {settings?.branch && <li>Branch: {settings.branch}</li>}
-            {settings?.accountHolderName && <li>Account Name: {settings.accountHolderName}</li>}
+            {settings?.accountHolderName && (
+              <li>Account Name: {settings.accountHolderName}</li>
+            )}
             {!settings && (
               <li>Account details will appear here once configured.</li>
             )}
@@ -280,7 +389,7 @@ function MobileFooter() {
             onClick={() => setShowQr((prev) => !prev)}
             className="mt-3 inline-flex items-center px-3 py-1.5 rounded-full bg-white/10 hover:bg-white/20 text-xs text-white transition"
           >
-            {showQr ? 'Hide QR Code' : 'Show QR Code'}
+            {showQr ? "Hide QR Code" : "Show QR Code"}
           </button>
           {showQr && settings?.qrImageUrl && (
             <div className="mt-3 flex justify-center">
@@ -296,29 +405,43 @@ function MobileFooter() {
 
       {/* Accordion: Contact */}
       <div className="border border-white/10 rounded-xl overflow-hidden">
-        <button onClick={() => toggle('contact')} aria-expanded={open.contact} aria-controls="footer-contact" className="w-full flex items-center justify-between px-4 py-3 bg-white/5">
+        <button
+          onClick={() => toggle("contact")}
+          aria-expanded={open.contact}
+          aria-controls="footer-contact"
+          className="w-full flex items-center justify-between px-4 py-3 bg-white/5"
+        >
           <span className="font-semibold">Contact</span>
-          <svg className={`w-5 h-5 transition-transform ${open.contact ? 'rotate-180' : ''}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+          <svg
+            className={`w-5 h-5 transition-transform ${open.contact ? "rotate-180" : ""}`}
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M19 9l-7 7-7-7"
+            />
           </svg>
         </button>
-        <div id="footer-contact" className={`${open.contact ? 'block' : 'hidden'} px-4 pb-3 pt-2`}>
+        <div
+          id="footer-contact"
+          className={`${open.contact ? "block" : "hidden"} px-4 pb-3 pt-2`}
+        >
           <ul className="space-y-2 text-sm text-gray-300">
             <li>
               📍 {settings?.addressLine1}
               {settings?.addressLine2 && `, ${settings.addressLine2}`}
               {settings?.addressLine3 && `, ${settings.addressLine3}`}
             </li>
-            <li>
-              📞 {(settings?.phones || []).join(' / ')}
-            </li>
-            <li>
-              ✉️ {(settings?.emails || []).join(' / ')}
-            </li>
+            <li>📞 {(settings?.phones || []).join(" / ")}</li>
+            <li>✉️ {(settings?.emails || []).join(" / ")}</li>
             <li>🕐 24/7 Support</li>
           </ul>
         </div>
       </div>
     </div>
-  )
+  );
 }

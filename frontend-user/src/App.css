@@ -10,3 +10,18 @@ body {
   --primary: #1D4ED8; /* deep blue */
   --secondary: #F97316; /* warm accent (orange) */
 }
+
+@property --moving-border-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@keyframes moving-border {
+  0% {
+    --moving-border-angle: 0deg;
+  }
+  100% {
+    --moving-border-angle: 360deg;
+  }
+}
