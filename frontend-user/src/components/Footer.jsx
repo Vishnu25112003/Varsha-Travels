@@ -37,7 +37,7 @@ export default function Footer() {
               <Button
                 as="div"
                 borderRadius="1rem" // increased for more visible rounding
-                containerClassName="w-56 h-28 border-2 border-white/30" // added visible border
+                containerClassName="w-56 h-16 border-2 border-white/30" // slightly increased box size
                 className="bg-white text-gray-900 shadow-lg"
               >
                 <h2 className="text-gray-900 varsha-travels-font text-xl sm:text-3xl font-bold">
@@ -274,7 +274,7 @@ function MobileFooter() {
           <Button
             as="div"
             borderRadius="1rem"
-            containerClassName="w-64 h-20 border-2 border-white/30"
+            containerClassName="w-56 h-16 border-2 border-white/30"
             className="bg-white text-gray-900 shadow-lg"
           >
             <h2 className="text-gray-900 varsha-travels-font text-3xl sm:text-4xl font-bold">
