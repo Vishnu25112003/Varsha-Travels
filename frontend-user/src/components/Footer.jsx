@@ -36,11 +36,11 @@ export default function Footer() {
             <div className="flex flex-col items-center text-center mb-4 md:mb-5">
               <Button
                 as="div"
-                borderRadius="0.75rem" // for a rectangular look
-                containerClassName="w-56 h-28"
-                className="bg-gray-900 text-white"
+                borderRadius="1rem" // increased for more visible rounding
+                containerClassName="w-56 h-28 border-2 border-white/30" // added visible border
+                className="bg-white text-gray-900 shadow-lg"
               >
-                <h2 className="text-white varsha-travels-font text-xl sm:text-3xl font-bold">
+                <h2 className="text-gray-900 varsha-travels-font text-xl sm:text-3xl font-bold">
                   Varsha Travels
                 </h2>
               </Button>
@@ -273,11 +273,11 @@ function MobileFooter() {
         <div className="flex flex-col items-center text-center mb-3">
           <Button
             as="div"
-            borderRadius="0.75rem"
-            containerClassName="w-64 h-20"
-            className="bg-gray-900 text-white"
+            borderRadius="1rem"
+            containerClassName="w-64 h-20 border-2 border-white/30"
+            className="bg-white text-gray-900 shadow-lg"
           >
-            <h2 className="text-white varsha-travels-font text-3xl sm:text-4xl font-bold">
+            <h2 className="text-gray-900 varsha-travels-font text-3xl sm:text-4xl font-bold">
               Varsha Travels
             </h2>
           </Button>
