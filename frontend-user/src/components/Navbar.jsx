@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import VarshaLogo from "../data/Varsha_Logo.png";
+import { Button } from "./ui/moving-border";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -97,9 +98,16 @@ export default function Navbar() {
                 alt="Varsha Travels Logo"
                 className="h-20 w-auto sm:h-22 md:h-24 lg:h-26 object-contain"
               />
-              <span className="varsha-travels-color varsha-travels-font font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl whitespace-nowrap">
-                Varsha Travels
-              </span>
+              <Button
+                as="div"
+                borderRadius="0.75rem"
+                containerClassName="w-auto"
+                className="bg-white shadow-lg px-3 py-2 sm:px-4 sm:py-2 md:px-5 md:py-3"
+              >
+                <span className="varsha-travels-color varsha-travels-font font-bold text-lg sm:text-2xl md:text-3xl lg:text-4xl whitespace-nowrap">
+                  Varsha Travels
+                </span>
+              </Button>
             </Link>
 
             {/* Right - Navigation Links and Book Now */}
