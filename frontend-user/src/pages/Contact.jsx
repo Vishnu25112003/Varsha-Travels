@@ -107,7 +107,7 @@ export default function Contact() {
       )}
 
       {/* Header - Contact Banner Only */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-blue-600 to-blue-700">
+      <section className="py-8 sm:py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-blue-600 to-blue-700">
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white pt-8 mb-4">
             Contact Us
@@ -124,7 +124,7 @@ export default function Contact() {
           <img
             src={VarshaLogo}
             alt="Varsha Travels Logo"
-            className="h-32 w-auto sm:h-40 md:h-48 lg:h-56 xl:h-64 object-contain mb-6 mx-auto"
+            className="h-40 w-auto sm:h-40 md:h-48 lg:h-56 xl:h-64 object-contain mb-6 mx-auto"
           />
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
             Your trusted partner for memorable journeys across South India
